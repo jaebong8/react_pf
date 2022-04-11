@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap");
+$openSans: "Open Sans", sans-serif;
+
+@import "common/reset";
+@import "common/header";
+@import "common/footer";
+@import "common/hamburger";
+
+@import "main/visual";
+@import "main/content";

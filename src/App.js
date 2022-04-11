@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import "./scss/style.scss";
+import { Route, Switch } from "react-router-dom";
+import Footer from "./components/common/Footer";
+import Header from "./components/common/Header";
+import Content from "./components/main/Content";
+import Visual from "./components/main/Visual";
+import Youtube from "./components/sub/Youtube";
+import About from "./components/sub/About";
+import Services from "./components/sub/Services";
+import Gallery from "./components/sub/Gallery";
+import Contact from "./components/sub/Contact";
+import Login from "./components/sub/Login";
+import Signup from "./components/sub/Signup";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Switch>
+        <Route exact path="/">
+          <Visual type={"main"} />
+          <Content />
+        </Route>
+
+        <Route path="/">
+          <Visual type={"sub"} />
+        </Route>
+      </Switch>
+      <Route path="/about" component={About}></Route>
+      <Route path="/services" component={Services}></Route>
+      <Route path="/gallery" component={Gallery}></Route>
+      <Route path="/youtube" component={Youtube}></Route>
+      <Route path="/contact" component={Contact}></Route>
+      <Route path="/sign_in" component={Login}></Route>
+      <Route path="/sign_up" component={Signup}></Route>
+      <Footer />
+    </>
   );
 }
 
