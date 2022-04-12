@@ -1,7 +1,8 @@
 import React from "react";
+import Layout from "../common/Layout";
 
 function Contact() {
-  return <div>Contact</div>;
+  return <Layout name={"Contact"}>Contact</Layout>;
 }
 
 export default Contact;

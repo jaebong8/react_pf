@@ -1,5 +1,5 @@
 import "./scss/style.scss";
-import { Route, Switch } from "react-router-dom";
+import { Route } from "react-router-dom";
 import Footer from "./components/common/Footer";
 import Header from "./components/common/Header";
 import Content from "./components/main/Content";
@@ -16,16 +16,12 @@ function App() {
   return (
     <>
       <Header />
-      <Switch>
-        <Route exact path="/">
-          <Visual type={"main"} />
-          <Content />
-        </Route>
 
-        <Route path="/">
-          <Visual type={"sub"} />
-        </Route>
-      </Switch>
+      <Route exact path="/">
+        <Visual type={"main"} />
+        <Content />
+      </Route>
+
       <Route path="/about" component={About}></Route>
       <Route path="/services" component={Services}></Route>
       <Route path="/gallery" component={Gallery}></Route>

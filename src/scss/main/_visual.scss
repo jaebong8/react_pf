@@ -1,6 +1,7 @@
 #visual {
   width: 100%;
-  background-color: #555;
+  filter: brightness(60%);
+
   &.main {
     height: 100vh;
   }

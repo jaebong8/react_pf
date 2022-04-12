@@ -1,0 +1,30 @@
+{
+  "data": [
+    { "name": "Matt Ryan", "position": "Vice President", "pic": "member1.jpg" },
+    {
+      "name": "Julia Jessica",
+      "position": "Stocker",
+      "pic": "member2.jpg"
+    },
+    {
+      "name": "Tim Thomas",
+      "position": "Laborer",
+      "pic": "member3.jpg"
+    },
+    {
+      "name": "Laura Jones",
+      "position": "warehouse",
+      "pic": "member4.jpg"
+    },
+    {
+      "name": "Alex Cora",
+      "position": "Food Production",
+      "pic": "member5.jpg"
+    },
+    {
+      "name": "Robert Belle",
+      "position": "Manager",
+      "pic": "member6.jpg"
+    }
+  ]
+}
