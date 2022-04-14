@@ -10,37 +10,13 @@ function Layout(props) {
 
   return (
     <>
-      <figure
-        className={`sub_visual`}
-        style={
-          props.name === "Youtube"
-            ? {
-                position: "absolute",
-                top: 0,
-                left: 0,
-                background: `url(${path}/img/sub-image.jpg) no-repeat center/cover`,
-                height: "100vh",
-              }
-            : {
-                background: `url(${path}/img/sub-image.jpg) no-repeat center/cover`,
-              }
-        }
-      >
+      <figure className={`sub_visual ${props.name}_sub`}>
         <div className="wrap">
-          <h2
-            style={
-              props.name === "Youtube"
-                ? {
-                    bottom: "10px",
-                    left: "50%",
-                    transform: "translateX(-50%)",
-                    fontSize: "32px",
-                  }
-                : null
-            }
-          >
-            {props.name}
-          </h2>
+          <span>{props.name.substr(0, 1)}</span>
+          <div className="txt">
+            <h2>{props.name}</h2>
+            <p>Creative All Things</p>
+          </div>
         </div>
       </figure>
       <section className={`content ${props.name}`} ref={frame}>

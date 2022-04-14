@@ -11,3 +11,19 @@ li {
 a {
   text-decoration: none;
 }
+
+// @font-face {
+//   font-family: "NenuWorld";
+
+//   src: url("../../font/PPNeueWorld-CondensedRegular.otf") format("opentype");
+// }
+// @font-face {
+//   font-family: "NenuWorld";
+
+//   src: url("../../font/PPNeueWorld-ExtendedThin.otf") format("opentype");
+// }
+@font-face {
+  font-family: "NenuWorld";
+
+  src: url("../../font/PPNeueWorld-SuperCondensedLight.ttf") format("truetype");
+}

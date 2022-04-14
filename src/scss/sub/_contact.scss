@@ -1,0 +1,123 @@
+.Contact_sub {
+  background-color: #c7ae9d;
+}
+
+.Contact {
+  .touch {
+    width: 100%;
+    height: 800px;
+    display: flex;
+    border-top: 1px solid rgb(165, 131, 128);
+    border-bottom: 1px solid rgb(165, 131, 128);
+    .pic {
+      width: 50%;
+      height: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .text {
+      width: 50%;
+      height: 100%;
+      background-color: #c7ae9d;
+      border-left: 1px solid rgb(165, 131, 128);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      h2 {
+        font: 100px/1 $NenuWorld;
+        color: rgb(0, 0, 0);
+      }
+      > p {
+        font: 18px/1.2 $Overpass;
+        width: 50%;
+        text-align: center;
+        color: #333;
+      }
+      .email {
+        display: flex;
+        .tit {
+          font: 16px/2 $Overpass;
+        }
+        .address {
+          font: 16px/2 $openSans;
+          margin-left: 80px;
+          color: #333;
+        }
+      }
+    }
+  }
+
+  .wrapper {
+    width: 100%;
+    height: 700px;
+    position: relative;
+    display: flex;
+    border-bottom: 1px solid rgb(165, 131, 128);
+    > button {
+      all: unset;
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      z-index: 2;
+      background-color: #c7ae9d;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font: bold 14px/1 $Overpass;
+      text-transform: uppercase;
+      color: #fff;
+      cursor: pointer;
+      &:hover {
+        background-color: #a78f80;
+      }
+    }
+
+    #map {
+      width: 50%;
+      height: 100%;
+      position: relative;
+      border-right: 1px solid rgb(165, 131, 128);
+    }
+    .branch {
+      width: 50%;
+      height: 100%;
+      background-color: #c7ae9d;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      li {
+        display: flex;
+        flex: 1;
+
+        justify-content: center;
+        letter-spacing: 20px;
+        font: 24px/1 "Yeon Sung";
+        cursor: pointer;
+        padding-top: 50px;
+        text-align: center;
+        transition: 0.5s;
+        // filter: grayscale(100);
+        color: #222;
+        &:nth-of-type(1) {
+          background: #eee;
+        }
+        &:nth-of-type(2) {
+          background: #aaa;
+        }
+        &:nth-of-type(3) {
+          background: #777;
+        }
+        &:hover {
+          flex: 2;
+        }
+      }
+    }
+  }
+}

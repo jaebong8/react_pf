@@ -9,8 +9,7 @@ import About from "./components/sub/About";
 import Services from "./components/sub/Services";
 import Gallery from "./components/sub/Gallery";
 import Contact from "./components/sub/Contact";
-import Login from "./components/sub/Login";
-import Signup from "./components/sub/Signup";
+import Join from "./components/sub/Join";
 
 function App() {
   return (
@@ -27,8 +26,7 @@ function App() {
       <Route path="/gallery" component={Gallery}></Route>
       <Route path="/youtube" component={Youtube}></Route>
       <Route path="/contact" component={Contact}></Route>
-      <Route path="/sign_in" component={Login}></Route>
-      <Route path="/sign_up" component={Signup}></Route>
+      <Route path="/join" component={Join}></Route>
       <Footer />
     </>
   );

@@ -1,43 +1,65 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import Hamburger from "./Hamburger";
+
 const path = process.env.PUBLIC_URL;
 
 function Header() {
+  const active = { color: "#fff1b4" };
+  const [MenuActive, setMenuActive] = useState(false);
   return (
     <header>
       <div className="inner">
         <h1>
-          <NavLink to="/">
-            <img src={`${path}/img/logo.png`} alt="logo" />
-          </NavLink>
+          <NavLink to="/">Beige'</NavLink>
         </h1>
-        <Hamburger />
-        <ul id="gnb">
+        <button
+          className="hamburger"
+          onClick={() => {
+            setMenuActive(true);
+          }}
+        >
+          MENU
+        </button>
+
+        <ul id="gnb" style={MenuActive ? { left: "0" } : null}>
           <li>
-            <NavLink to="/about">ABOUT</NavLink>
+            <NavLink to="/about" activeStyle={active}>
+              ABOUT
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/services">SERVICES</NavLink>
+            <NavLink to="/services" activeStyle={active}>
+              SERVICES
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/gallery">GALLERY</NavLink>
+            <NavLink to="/gallery" activeStyle={active}>
+              GALLERY
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/youtube">YOUTUBE</NavLink>
+            <NavLink to="/youtube" activeStyle={active}>
+              YOUTUBE
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/contact">CONTACT</NavLink>
+            <NavLink to="/contact" activeStyle={active}>
+              CONTACT
+            </NavLink>
           </li>
+          <button
+            className="closeBtn"
+            onClick={() => {
+              setMenuActive(false);
+            }}
+          >
+            CLOSE
+          </button>
         </ul>
-        <ul id="gnb_sign">
-          <li>
-            <NavLink to="/sign_in">LOG IN</NavLink>
-          </li>
-          <li>
-            <NavLink to="/sign_up">SIGN UP</NavLink>
-          </li>
-        </ul>
+
+        <NavLink to="/join" activeStyle={active} className="join">
+          JOIN
+        </NavLink>
       </div>
     </header>
   );

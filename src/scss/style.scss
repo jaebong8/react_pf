@@ -1,14 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gabriela&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@100;300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap");
 $openSans: "Open Sans", sans-serif;
 $Raleway: "Raleway", sans-serif;
+$logo: "Gabriela", serif;
+$NenuWorld: "NenuWorld";
+$Overpass: "Overpass", sans-serif;
 $tablet: 1179px;
 $mobile: 539px;
 
 @import "common/reset";
 @import "common/header";
 @import "common/footer";
-@import "common/hamburger";
 @import "common/layout";
 
 @import "main/visual";
@@ -16,3 +21,6 @@ $mobile: 539px;
 
 @import "sub/about";
 @import "sub/youtube";
+@import "sub/gallery";
+@import "sub/contact";
+@import "sub/join";

@@ -115,13 +115,13 @@
             div {
               width: 35px;
               height: 35px;
-              background-color: #3e755f;
+              background-color: #645832;
               display: flex;
               justify-content: center;
               align-items: center;
               visibility: hidden;
               cursor: pointer;
-              transition: 0.5s;
+              transition: margin-left 1s, margin-bottom 1s;
 
               opacity: 0;
               &:hover {
@@ -152,7 +152,7 @@
             left: 0;
             width: 35px;
             height: 35px;
-            background-color: #3e755f;
+            background-color: #645832;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -164,7 +164,7 @@
           &.on {
             img {
               transform: scale(1.1);
-              filter: saturate(30%);
+              filter: sepia(40%);
             }
             div {
               opacity: 1;

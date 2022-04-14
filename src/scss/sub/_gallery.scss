@@ -1,0 +1,51 @@
+.Gallery_sub {
+  background-color: #cfcaab;
+}
+
+.Gallery {
+  background-color: #cfcaab;
+  padding-top: 150px;
+  ul {
+    width: 100%;
+    &::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    li {
+      width: 25%;
+      height: 20vw;
+      float: left;
+      cursor: pointer;
+      border: 1px solid #8b8566;
+      border-left: none;
+      border-top: none;
+      &:nth-of-type(1),
+      &:nth-of-type(2),
+      &:nth-of-type(3),
+      &:nth-of-type(4) {
+        border-top: 1px solid #8b8566;
+      }
+      &:nth-of-type(4n) {
+        border-right: none;
+      }
+      .inner {
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+
+        .pic {
+          width: 100%;
+          height: 100%;
+          margin-bottom: 20px;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+}
