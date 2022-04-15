@@ -134,7 +134,10 @@ function Contact() {
         >
           {Traffic ? " Traffic OFF" : "Traffic ON"}
         </button>
-        <div id="map" ref={container}></div>
+        <div className="wrapper">
+          <div id="map" ref={container}></div>
+        </div>
+
         <ul className="branch">
           {mapInfo.map((info, idx) => {
             return (

@@ -27,11 +27,7 @@ function Header() {
               ABOUT
             </NavLink>
           </li>
-          <li>
-            <NavLink to="/services" activeStyle={active}>
-              SERVICES
-            </NavLink>
-          </li>
+
           <li>
             <NavLink to="/gallery" activeStyle={active}>
               GALLERY
@@ -40,6 +36,11 @@ function Header() {
           <li>
             <NavLink to="/youtube" activeStyle={active}>
               YOUTUBE
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/community" activeStyle={active}>
+              Community
             </NavLink>
           </li>
           <li>

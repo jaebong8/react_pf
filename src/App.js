@@ -6,7 +6,7 @@ import Content from "./components/main/Content";
 import Visual from "./components/main/Visual";
 import Youtube from "./components/sub/Youtube";
 import About from "./components/sub/About";
-import Services from "./components/sub/Services";
+import Community from "./components/sub/Community";
 import Gallery from "./components/sub/Gallery";
 import Contact from "./components/sub/Contact";
 import Join from "./components/sub/Join";
@@ -22,7 +22,7 @@ function App() {
       </Route>
 
       <Route path="/about" component={About}></Route>
-      <Route path="/services" component={Services}></Route>
+      <Route path="/community" component={Community}></Route>
       <Route path="/gallery" component={Gallery}></Route>
       <Route path="/youtube" component={Youtube}></Route>
       <Route path="/contact" component={Contact}></Route>

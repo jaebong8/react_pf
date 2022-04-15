@@ -61,29 +61,36 @@
     > button {
       all: unset;
       position: absolute;
-      top: 5px;
-      left: 5px;
+      top: 55px;
+      left: 55px;
       z-index: 2;
-      background-color: #c7ae9d;
+      background-color: #f0e2d9;
       padding: 10px 20px;
       display: flex;
       align-items: center;
       justify-content: center;
       font: bold 14px/1 $Overpass;
       text-transform: uppercase;
-      color: #fff;
+      color: #222;
       cursor: pointer;
       &:hover {
         background-color: #a78f80;
+        color: #fff;
+      }
+    }
+    .wrapper {
+      width: 50%;
+      height: 100%;
+      padding: 50px;
+      background-color: #c7ae9d;
+      #map {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        border-right: 1px solid rgb(165, 131, 128);
       }
     }
 
-    #map {
-      width: 50%;
-      height: 100%;
-      position: relative;
-      border-right: 1px solid rgb(165, 131, 128);
-    }
     .branch {
       width: 50%;
       height: 100%;
