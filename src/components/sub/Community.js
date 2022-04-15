@@ -1,5 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import Layout from "../common/Layout";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPen } from "@fortawesome/free-solid-svg-icons";
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
 function Community() {
   const path = process.env.PUBLIC_URL;
@@ -99,6 +102,7 @@ function Community() {
         </div>
         <div className="showBox">
           {posts.map((post, idx) => {
+            let con = post.content.split("\n");
             return (
               <article key={idx}>
                 {post.enableUpdate ? (
@@ -111,15 +115,9 @@ function Community() {
                     <textarea
                       defaultValue={post.content}
                       ref={editTextarea}
+                      rows={5}
                     ></textarea>
-                    <div className="btns">
-                      <button
-                        onClick={() => {
-                          cancelEdit(idx);
-                        }}
-                      >
-                        cancel
-                      </button>
+                    <div className="editBtns">
                       <button
                         onClick={() => {
                           updatePost(idx);
@@ -127,26 +125,43 @@ function Community() {
                       >
                         save
                       </button>
+                      <button
+                        onClick={() => {
+                          cancelEdit(idx);
+                        }}
+                      >
+                        cancel
+                      </button>
                     </div>
                   </>
                 ) : (
                   <>
                     <h2>{post.title}</h2>
-                    <p>{post.content}</p>
+                    <p>
+                      {con.map((txt, idx) => {
+                        return (
+                          <React.Fragment key={idx}>
+                            {txt}
+                            <br />
+                          </React.Fragment>
+                        );
+                      })}
+                    </p>
+
                     <div className="btns">
                       <button
                         onClick={() => {
                           editPost(idx);
                         }}
                       >
-                        edit
+                        <FontAwesomeIcon icon={faPen} />
                       </button>
                       <button
                         onClick={() => {
                           deletePost(idx);
                         }}
                       >
-                        delete
+                        <FontAwesomeIcon icon={faTrashCan} />
                       </button>
                     </div>
                   </>

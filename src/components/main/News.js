@@ -28,11 +28,21 @@ function News() {
 
       <ul>
         {posts.map((post, idx) => {
+          let con = post.content.split("\n");
           if (idx < 3) {
             return (
               <li key={idx}>
                 <h2>{post.title}</h2>
-                <p>{post.content}</p>
+                <p>
+                  {con.map((txt, idx) => {
+                    return (
+                      <React.Fragment key={idx}>
+                        {txt}
+                        <br />
+                      </React.Fragment>
+                    );
+                  })}
+                </p>
               </li>
             );
           }
