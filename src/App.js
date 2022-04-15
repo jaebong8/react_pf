@@ -4,6 +4,7 @@ import Footer from "./components/common/Footer";
 import Header from "./components/common/Header";
 import Content from "./components/main/Content";
 import Visual from "./components/main/Visual";
+import News from "./components/main/News";
 import Youtube from "./components/sub/Youtube";
 import About from "./components/sub/About";
 import Community from "./components/sub/Community";
@@ -19,6 +20,7 @@ function App() {
       <Route exact path="/">
         <Visual type={"main"} />
         <Content />
+        <News />
       </Route>
 
       <Route path="/about" component={About}></Route>
