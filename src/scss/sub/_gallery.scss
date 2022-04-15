@@ -1,48 +1,109 @@
 .Gallery_sub {
-  background-color: #cfcaab;
+  background-color: #ebe6d7;
 }
 
 .Gallery {
-  background-color: #cfcaab;
-  padding-top: 150px;
-  ul {
-    width: 100%;
-    &::after {
-      content: "";
+  background-color: #ebe6d7;
+  border-top: 1px solid #d1c7a3;
+  .wrapper {
+    > span {
       display: block;
-      clear: both;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #d1c7a3;
+      margin-left: 25%;
+      padding: 15px;
+      padding-left: 30px;
+      font: 400 18px/1 $Kanit;
+      color: #333;
     }
-    li {
-      width: 25%;
-      height: 20vw;
-      float: left;
-      cursor: pointer;
-      border: 1px solid #8b8566;
-      border-left: none;
-      border-top: none;
-      &:nth-of-type(1),
-      &:nth-of-type(2),
-      &:nth-of-type(3),
-      &:nth-of-type(4) {
-        border-top: 1px solid #8b8566;
+    .wrap {
+      width: 100%;
+      height: auto;
+      display: flex;
+      position: relative;
+
+      .filter_box {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        flex: 1;
+        border-right: 1px solid #d1c7a3;
+        border-top: 1px solid #d1c7a3;
+        margin-top: -1px;
+        h2 {
+          border-bottom: 1px solid #d1c7a3;
+          position: sticky;
+          top: 0;
+          font: 18px/1 $Kanit;
+          color: #333;
+          padding: 10px;
+          padding-left: 80px;
+        }
+        ul {
+          border-bottom: 1px solid #d1c7a3;
+          position: sticky;
+          top: 39px;
+          li {
+            padding: 10px;
+            padding-left: 80px;
+            cursor: pointer;
+            font: 300 14px/1 $Kanit;
+            color: #555;
+          }
+        }
       }
-      &:nth-of-type(4n) {
-        border-right: none;
-      }
-      .inner {
+      > ul {
         width: 100%;
-        height: 100%;
-        padding: 10px;
+        flex: 3;
+        &::after {
+          content: "";
+          display: block;
+          clear: both;
+        }
+        > li {
+          width: 50%;
+          float: left;
+          cursor: pointer;
+          padding: 10px;
+          border: 1px solid #d1c7a3;
+          border-top: none;
+          border-left: none;
 
-        .pic {
-          width: 100%;
-          height: 100%;
-          margin-bottom: 20px;
-
-          img {
+          > .inner {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            > .pic {
+              width: 100%;
+              height: 100%;
+              overflow: hidden;
+
+              > img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: 0.5s;
+                &:hover {
+                  transform: scale(1.1);
+                  filter: brightness(50%);
+                }
+              }
+            }
+            .txt {
+              display: flex;
+              justify-content: space-between;
+              h3 {
+                font: 18px/1 $Kanit;
+                color: #333;
+                padding: 5px;
+              }
+              span {
+                display: inline-block;
+                font: 16px/1 $Kanit;
+                color: rgb(31, 48, 0);
+                padding: 5px;
+              }
+            }
           }
         }
       }

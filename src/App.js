@@ -1,5 +1,5 @@
 import "./scss/style.scss";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Footer from "./components/common/Footer";
 import Header from "./components/common/Header";
 import Content from "./components/main/Content";
@@ -15,13 +15,18 @@ import Join from "./components/sub/Join";
 function App() {
   return (
     <>
-      <Header />
+      <Switch>
+        <Route exact path="/">
+          <Header type={"main"} />
+          <Visual type={"main"} />
+          <Content />
+          <News />
+        </Route>
 
-      <Route exact path="/">
-        <Visual type={"main"} />
-        <Content />
-        <News />
-      </Route>
+        <Route path="/">
+          <Header type={"sub"} />
+        </Route>
+      </Switch>
 
       <Route path="/about" component={About}></Route>
       <Route path="/community" component={Community}></Route>

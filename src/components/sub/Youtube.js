@@ -41,80 +41,111 @@ function Youtube() {
   return (
     <>
       <Layout name={"Youtube"}>
-        <img src={`${path}/img/youtube1.jpg`} />
-        <div className="wrap" ref={wrap}>
-          {Videos.map((video, idx) => {
-            const desc = video.snippet.description;
-            const date = video.snippet.publishedAt;
-
-            return (
-              <article
-                onClick={() => {
-                  setOpen(!Open);
-                  setPopIdx(idx);
-                }}
-                key={idx}
-                style={{
-                  transform: `rotate(${
-                    (360 / Videos.length) * idx
-                  }deg) translateY(-150%)`,
-                }}
-                className={idx === 0 ? "on" : null}
-              >
-                <div className="inner">
-                  <div className="pic">
-                    <img src={video.snippet.thumbnails.high.url} />
-                  </div>
-
-                  <h2>{video.snippet.title}</h2>
-                  <p>
-                    {desc.length > 150 ? desc.substr(0, 150) + "..." : desc}
-                  </p>
-                  <span>{date.split("T")[0]}</span>
+        <div className="blog">
+          <div className="left_slide">OUR STORIES</div>
+          <div className="wrapper">
+            <ul className="top_slide">
+              <li>FEATURED ARTICLE</li>
+              <li>BLOG</li>
+            </ul>
+            <div className="content">
+              <article>
+                <h2>Manhattan Pied-à-terre for a new Chicago apartment</h2>
+                <p>
+                  Interior designer Sarah Vaile remembers eyeing a New York City
+                  apartment—one with bold colors and a personality as distinct
+                  as its chic owner—in a 2014 issue of House Beautiful, and
+                  tucking it away for future design inspiration. Years later, in
+                  a serendipitous turn of events, the woman she’d seen in the
+                  magazine—a stylish figure now in her 30s—just moved to
+                  Chicago.
+                </p>
+                <button>READ ARTICLE</button>
+              </article>
+              <article>
+                <div className="pic">
+                  <img src={`${path}/img/youtube2.jpg`} />
                 </div>
               </article>
-            );
-          })}
+            </div>
+          </div>
         </div>
-        <button
-          className="next"
-          onClick={() => {
-            setIndex(--Index);
-            if (activeIndex === Videos.length - 1) {
-              wrap.current.querySelectorAll("article").forEach((item) => {
-                item.classList.remove("on");
-              });
-              wrap.current.querySelectorAll("article")[0].classList.add("on");
-              setActiveIndex(0);
-              return;
-            }
-            setActiveIndex(++activeIndex);
-            activation();
-          }}
-        >
-          <span>NEXT</span>
-        </button>
-        <button
-          className="prev"
-          onClick={() => {
-            setIndex(++Index);
+        <div className="rotateBox">
+          <img src={`${path}/img/youtube1.jpg`} />
+          <div className="wrap" ref={wrap}>
+            {Videos.map((video, idx) => {
+              const desc = video.snippet.description;
+              const date = video.snippet.publishedAt;
 
-            if (activeIndex === 0) {
-              wrap.current.querySelectorAll("article").forEach((item) => {
-                item.classList.remove("on");
-              });
-              wrap.current
-                .querySelectorAll("article")
-                [Videos.length - 1].classList.add("on");
-              setActiveIndex(Videos.length - 1);
-              return;
-            }
-            setActiveIndex(--activeIndex);
-            activation();
-          }}
-        >
-          <span>PREV</span>
-        </button>
+              return (
+                <article
+                  onClick={() => {
+                    setOpen(!Open);
+                    setPopIdx(idx);
+                  }}
+                  key={idx}
+                  style={{
+                    transform: `rotate(${
+                      (360 / Videos.length) * idx
+                    }deg) translateY(-150%)`,
+                  }}
+                  className={idx === 0 ? "on" : null}
+                >
+                  <div className="inner">
+                    <div className="pic">
+                      <img src={video.snippet.thumbnails.high.url} />
+                    </div>
+
+                    <h2>{video.snippet.title}</h2>
+                    <p>
+                      {desc.length > 150 ? desc.substr(0, 150) + "..." : desc}
+                    </p>
+                    <span>{date.split("T")[0]}</span>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+          <button
+            className="next"
+            onClick={() => {
+              setIndex(--Index);
+              if (activeIndex === Videos.length - 1) {
+                wrap.current.querySelectorAll("article").forEach((item) => {
+                  item.classList.remove("on");
+                });
+                wrap.current.querySelectorAll("article")[0].classList.add("on");
+                setActiveIndex(0);
+                return;
+              }
+              setActiveIndex(++activeIndex);
+              activation();
+            }}
+          >
+            <span>NEXT</span>
+          </button>
+          <button
+            className="prev"
+            onClick={() => {
+              setIndex(++Index);
+
+              if (activeIndex === 0) {
+                wrap.current.querySelectorAll("article").forEach((item) => {
+                  item.classList.remove("on");
+                });
+                wrap.current
+                  .querySelectorAll("article")
+                  [Videos.length - 1].classList.add("on");
+                setActiveIndex(Videos.length - 1);
+                return;
+              }
+              setActiveIndex(--activeIndex);
+              activation();
+            }}
+          >
+            <span>PREV</span>
+          </button>
+        </div>
       </Layout>
 
       {Open && (

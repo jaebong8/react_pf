@@ -17,6 +17,7 @@ function Layout(props) {
             <h2>{props.name}</h2>
             <p>Creative All Things</p>
           </div>
+          <p>Lorem, ipsum.</p>
         </div>
       </figure>
       <section className={`content ${props.name}`} ref={frame}>

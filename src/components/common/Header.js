@@ -3,11 +3,11 @@ import { NavLink } from "react-router-dom";
 
 const path = process.env.PUBLIC_URL;
 
-function Header() {
+function Header(props) {
   const active = { color: "#fff1b4" };
   const [MenuActive, setMenuActive] = useState(false);
   return (
-    <header>
+    <header className={props.type}>
       <div className="inner">
         <h1>
           <NavLink to="/">Beige'</NavLink>

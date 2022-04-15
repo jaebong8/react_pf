@@ -20,7 +20,7 @@ header {
       height: 40px;
       position: relative;
       text-indent: 50px;
-      font: 16px/1 $openSans;
+      font: 16px/1 $Kanit;
       color: #fff;
       cursor: pointer;
       &:hover {
@@ -122,6 +122,44 @@ header {
       transition: 0.5s;
       &:hover {
         background-color: #857359;
+      }
+    }
+  }
+  &.sub {
+    .inner {
+      .hamburger {
+        color: #222;
+        cursor: pointer;
+        &:hover {
+          color: #4b4741;
+        }
+        &::after,
+        &::before {
+          background-color: #222;
+        }
+      }
+
+      h1 {
+        a {
+          color: #222;
+        }
+      }
+
+      #gnb {
+      }
+      .join {
+        display: inline-block;
+        padding: 10px 20px;
+        border: 1px solid #222;
+        border-radius: 30px;
+        font: 14px/1 $Kanit;
+        color: #222;
+        transition: 0.5s;
+        &:hover {
+          background-color: #8d734d;
+          color: #fff;
+          border: 1px solid transparent;
+        }
       }
     }
   }
