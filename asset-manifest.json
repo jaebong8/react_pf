@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/react_pf/static/css/main.b2da7454.css",
-    "main.js": "/react_pf/static/js/main.222c5efc.js",
+    "main.css": "/react_pf/static/css/main.7e27c381.css",
+    "main.js": "/react_pf/static/js/main.a112f3d9.js",
     "static/media/PPNeueWorld-SuperCondensedLight.ttf": "/react_pf/static/media/PPNeueWorld-SuperCondensedLight.fe0cb620744ea3cb628e.ttf",
     "index.html": "/react_pf/index.html",
-    "main.b2da7454.css.map": "/react_pf/static/css/main.b2da7454.css.map",
-    "main.222c5efc.js.map": "/react_pf/static/js/main.222c5efc.js.map"
+    "main.7e27c381.css.map": "/react_pf/static/css/main.7e27c381.css.map",
+    "main.a112f3d9.js.map": "/react_pf/static/js/main.a112f3d9.js.map"
   },
   "entrypoints": [
-    "static/css/main.b2da7454.css",
-    "static/js/main.222c5efc.js"
+    "static/css/main.7e27c381.css",
+    "static/js/main.a112f3d9.js"
   ]
 }
