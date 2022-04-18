@@ -1,0 +1,104 @@
+.Join_sub {
+  background-color: #ebe6d7;
+}
+
+.Join {
+  background-color: #ebe6d7;
+  width: 100%;
+
+  border-top: 1px solid #d1c7a3;
+  .sign {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    .pic {
+      flex: 1;
+      position: relative;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        h2 {
+          font: 4vw/1 $NenuWorld;
+          color: #fff;
+          text-align: center;
+        }
+        button {
+          all: unset;
+          border: 1px solid #bbb;
+          padding: 15px 10px;
+          font: 14px/1 $Kanit;
+          color: #bbb;
+          width: 300px;
+          margin-top: 50px;
+        }
+      }
+    }
+    > form {
+      flex: 1;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      fieldset {
+        width: 100%;
+        height: 100%;
+        border: none;
+        display: flex;
+
+        align-items: center;
+        table {
+          width: 100%;
+          height: 100%;
+          border-collapse: collapse;
+          tbody {
+            tr {
+              width: 100%;
+              padding: 10px;
+              border-bottom: 1px solid #d1c7a3;
+              th {
+                width: 30%;
+                font: 30px/1 $NenuWorld;
+                letter-spacing: 3px;
+              }
+              td {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                padding: 10px;
+
+                label {
+                  font: 14px/1 $Kanit;
+                }
+                input {
+                  width: 50%;
+                  padding: 10px;
+                  font: 14px/1 $Kanit;
+                  background-color: transparent;
+                  border: none;
+                }
+                .errTxt {
+                  margin-top: 10px;
+                  font: 14px/1 $Kanit;
+                  color: rgb(133, 1, 1);
+                }
+                select {
+                  height: 100%;
+                }
+                div {
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

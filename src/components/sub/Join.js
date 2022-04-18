@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Layout from "../common/Layout";
 
 function Join() {
+  const path = process.env.PUBLIC_URL;
   const initVal = {
     userid: "",
     pwd1: "",
@@ -107,173 +108,189 @@ function Join() {
 
   return (
     <Layout name={"Join"}>
-      {Success && <h2>회원가입을 축하합니다</h2>}
-      <form onSubmit={handleSubmit}>
-        <fieldset>
-          <legend>회원가입 폼 양식</legend>
-          <table border="1">
-            <caption>회원가입 정보입력</caption>
-            <tbody>
-              <tr>
-                <th scope="row">
-                  <label htmlFor="userid">USER ID</label>
-                </th>
-                <td>
-                  <input
-                    type="text"
-                    id="userid"
-                    name="userid"
-                    placeholder="아이디를 입력하세요"
-                    value={Val.userid}
-                    onChange={handleChange}
-                  />
-                  <span className="errTxt">{Err.userid}</span>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">
-                  <label htmlFor="pwd1">PASSWORD</label>
-                </th>
-                <td>
-                  <input
-                    type="password"
-                    name="pwd1"
-                    id="pwd1"
-                    placeholder="비밀번호를 입력하세요"
-                    value={Val.pwd1}
-                    onChange={handleChange}
-                  />
-                  <span className="errTxt">{Err.pwd1}</span>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">
-                  <label htmlFor="pwd2">RE PASSWORD</label>
-                </th>
-                <td>
-                  <input
-                    type="password"
-                    name="pwd2"
-                    id="pwd2"
-                    placeholder="비밀번호를 재입력하세요"
-                    value={Val.pwd2}
-                    onChange={handleChange}
-                  />
-                  <span className="errTxt">{Err.pwd2}</span>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">
-                  <label htmlFor="email">EMAIL</label>
-                </th>
-                <td>
-                  <input
-                    type="text"
-                    name="email"
-                    id="email"
-                    placeholder="이메일을 입력하세요"
-                    value={Val.email}
-                    onChange={handleChange}
-                  />
-                  <span className="errTxt">{Err.email}</span>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">GENDER</th>
-                <td>
-                  <label htmlFor="male">MALE</label>
-                  <input
-                    type="radio"
-                    id="male"
-                    name="gender"
-                    onChange={handleRadio}
-                  />
-                  <label htmlFor="female">FEMALE</label>
-                  <input
-                    type="radio"
-                    id="female"
-                    name="gender"
-                    onChange={handleRadio}
-                  />
-                  <span className="errTxt">{Err.gender}</span>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">INTERESTS</th>
-                <td>
-                  <label htmlFor="sports">SPORTS</label>
-                  <input
-                    type="checkbox"
-                    name="interests"
-                    id="sports"
-                    onChange={handleCheck}
-                  />
-                  <label htmlFor="game">GAME</label>
-                  <input
-                    type="checkbox"
-                    name="interests"
-                    id="game"
-                    onChange={handleCheck}
-                  />
-                  <label htmlFor="music">MUSIC</label>
-                  <input
-                    type="checkbox"
-                    name="interests"
-                    id="music"
-                    onChange={handleCheck}
-                  />
-                  <span className="errTxt">{Err.interests}</span>
-                </td>
-              </tr>
+      <div className="sign">
+        {Success && <h2>회원가입을 축하합니다</h2>}
+        <div className="pic">
+          <img src={`${path}/img/SCENE03_1.webp`} />
+          <div className="text">
+            <h2>
+              BE PART OF OUR CLUB <br /> FOR DISCOUNT
+            </h2>
+            <button>YOUR EMAIL</button>
+          </div>
+        </div>
+        <form onSubmit={handleSubmit}>
+          <fieldset>
+            <legend className="h">회원가입 폼 양식</legend>
+            <table>
+              <caption className="h">회원가입 정보입력</caption>
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    <label htmlFor="userid">USER ID</label>
+                  </th>
+                  <td>
+                    <input
+                      type="text"
+                      id="userid"
+                      name="userid"
+                      placeholder="아이디를 입력하세요"
+                      value={Val.userid}
+                      onChange={handleChange}
+                    />
+                    <span className="errTxt">{Err.userid}</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label htmlFor="pwd1">PASSWORD</label>
+                  </th>
+                  <td>
+                    <input
+                      type="password"
+                      name="pwd1"
+                      id="pwd1"
+                      placeholder="비밀번호를 입력하세요"
+                      value={Val.pwd1}
+                      onChange={handleChange}
+                    />
+                    <span className="errTxt">{Err.pwd1}</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label htmlFor="pwd2">RE PASSWORD</label>
+                  </th>
+                  <td>
+                    <input
+                      type="password"
+                      name="pwd2"
+                      id="pwd2"
+                      placeholder="비밀번호를 재입력하세요"
+                      value={Val.pwd2}
+                      onChange={handleChange}
+                    />
+                    <span className="errTxt">{Err.pwd2}</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label htmlFor="email">EMAIL</label>
+                  </th>
+                  <td>
+                    <input
+                      type="text"
+                      name="email"
+                      id="email"
+                      placeholder="이메일을 입력하세요"
+                      value={Val.email}
+                      onChange={handleChange}
+                    />
+                    <span className="errTxt">{Err.email}</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">GENDER</th>
+                  <td>
+                    <div>
+                      <label htmlFor="male">MALE</label>
+                      <input
+                        type="radio"
+                        id="male"
+                        name="gender"
+                        onChange={handleRadio}
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="female">FEMALE</label>
+                      <input
+                        type="radio"
+                        id="female"
+                        name="gender"
+                        onChange={handleRadio}
+                      />
+                    </div>
 
-              <tr>
-                <th scope="row">
-                  <label htmlFor="edu">EDUCTAION</label>
-                </th>
-                <td>
-                  <select name="edu" id="edu" onChange={handleSelect}>
-                    <option value="">학력을 선택하세요</option>
-                    <option value="elementary-school">초등학교 졸업</option>
-                    <option value="middle-school">중학교 졸업</option>
-                    <option value="high-school">고등학교 졸업</option>
-                    <option value="college">대학교 졸업</option>
-                  </select>
-                  <span className="errTxt">{Err.edu}</span>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">
-                  <label htmlFor="comments">LEAVE COMMENTS</label>
-                </th>
-                <td>
-                  <textarea
-                    name="comments"
-                    id="comments"
-                    cols="30"
-                    rows="10"
-                    value={Val.comments}
-                    onChange={handleChange}
-                  />
-                  <span className="errTxt">{Err.comments}</span>
-                </td>
-              </tr>
+                    <span className="errTxt">{Err.gender}</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">INTERESTS</th>
+                  <td>
+                    <label htmlFor="sports">SPORTS</label>
+                    <input
+                      type="checkbox"
+                      name="interests"
+                      id="sports"
+                      onChange={handleCheck}
+                    />
+                    <label htmlFor="game">GAME</label>
+                    <input
+                      type="checkbox"
+                      name="interests"
+                      id="game"
+                      onChange={handleCheck}
+                    />
+                    <label htmlFor="music">MUSIC</label>
+                    <input
+                      type="checkbox"
+                      name="interests"
+                      id="music"
+                      onChange={handleCheck}
+                    />
+                    <span className="errTxt">{Err.interests}</span>
+                  </td>
+                </tr>
 
-              <tr>
-                <th colSpan="2">
-                  <input type="reset" value="CANCEL" onClick={handleReset} />
-                  <input
-                    type="submit"
-                    value="SEND"
-                    onClick={() => {
-                      setIsSubmit(true);
-                    }}
-                  />
-                </th>
-              </tr>
-            </tbody>
-          </table>
-        </fieldset>
-      </form>
+                <tr>
+                  <th scope="row">
+                    <label htmlFor="edu">EDUCTAION</label>
+                  </th>
+                  <td>
+                    <select name="edu" id="edu" onChange={handleSelect}>
+                      <option value="">학력을 선택하세요</option>
+                      <option value="elementary-school">초등학교 졸업</option>
+                      <option value="middle-school">중학교 졸업</option>
+                      <option value="high-school">고등학교 졸업</option>
+                      <option value="college">대학교 졸업</option>
+                    </select>
+                    <span className="errTxt">{Err.edu}</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label htmlFor="comments">LEAVE COMMENTS</label>
+                  </th>
+                  <td>
+                    <textarea
+                      name="comments"
+                      id="comments"
+                      cols="30"
+                      rows="10"
+                      value={Val.comments}
+                      onChange={handleChange}
+                    />
+                    <span className="errTxt">{Err.comments}</span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th colSpan="2">
+                    <input type="reset" value="CANCEL" onClick={handleReset} />
+                    <input
+                      type="submit"
+                      value="SEND"
+                      onClick={() => {
+                        setIsSubmit(true);
+                      }}
+                    />
+                  </th>
+                </tr>
+              </tbody>
+            </table>
+          </fieldset>
+        </form>
+      </div>
     </Layout>
   );
 }
