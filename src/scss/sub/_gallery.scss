@@ -5,6 +5,15 @@
 .Gallery {
   background-color: #ebe6d7;
   border-top: 1px solid #d1c7a3;
+  min-height: 500px;
+  > .loading {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 60%;
+    left: 60%;
+    transform: translateX(-50%);
+  }
   .wrapper {
     > span {
       display: block;
@@ -56,6 +65,15 @@
       > ul {
         width: 100%;
         flex: 3;
+        position: relative;
+        transform: translateY(200px);
+        opacity: 0;
+        transition: 1s;
+        &.on {
+          transform: translateY(0);
+          opacity: 1;
+        }
+
         &::after {
           content: "";
           display: block;

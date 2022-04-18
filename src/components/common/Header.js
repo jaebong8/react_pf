@@ -39,10 +39,16 @@ function Header(props) {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/community" activeStyle={active}>
-              Community
+            <NavLink to="/Blog" activeStyle={active}>
+              BLOG
             </NavLink>
           </li>
+          <li>
+            <NavLink to="/community" activeStyle={active}>
+              COMMUNITY
+            </NavLink>
+          </li>
+
           <li>
             <NavLink to="/contact" activeStyle={active}>
               CONTACT
@@ -58,7 +64,7 @@ function Header(props) {
           </button>
         </ul>
 
-        <NavLink to="/join" activeStyle={active} className="join">
+        <NavLink to="/join" className="join">
           JOIN
         </NavLink>
       </div>

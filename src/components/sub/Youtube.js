@@ -71,7 +71,13 @@ function Youtube() {
           </div>
         </div>
         <div className="rotateBox">
-          <img src={`${path}/img/youtube1.jpg`} />
+          <div
+            className="pic"
+            style={{
+              background: `url(${path}/img/youtube1.jpg) no-repeat bottom/contain`,
+            }}
+          ></div>
+
           <div className="wrap" ref={wrap}>
             {Videos.map((video, idx) => {
               const desc = video.snippet.description;
@@ -87,7 +93,7 @@ function Youtube() {
                   style={{
                     transform: `rotate(${
                       (360 / Videos.length) * idx
-                    }deg) translateY(-150%)`,
+                    }deg) translateY(-180%)`,
                   }}
                   className={idx === 0 ? "on" : null}
                 >

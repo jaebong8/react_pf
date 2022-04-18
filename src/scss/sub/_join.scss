@@ -7,10 +7,47 @@
   width: 100%;
 
   border-top: 1px solid #d1c7a3;
+
+  .terms {
+    padding-top: 50px;
+    border-bottom: 1px solid #d1c7a3;
+    .inner {
+      width: 1180px;
+      margin: 0 auto;
+      > h2 {
+        font: 4vw/1 $NenuWorld;
+      }
+      ul {
+        margin-top: 100px;
+        li {
+          display: flex;
+
+          border-top: 1px solid #d1c7a3;
+          padding-top: 20px;
+          padding-bottom: 30px;
+          span {
+            font: 18px/1 $Kanit;
+            color: #222;
+          }
+          h2 {
+            width: 50%;
+            font: 4vw/1 $NenuWorld;
+            margin-left: 70px;
+          }
+          p {
+            width: 50%;
+            font: 16px/1.6 $Kanit;
+            color: #333;
+          }
+        }
+      }
+    }
+  }
   .sign {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    margin-top: 100px;
     .pic {
       flex: 1;
       position: relative;
@@ -67,12 +104,29 @@
                 width: 30%;
                 font: 30px/1 $NenuWorld;
                 letter-spacing: 3px;
+                &.btnBox {
+                  padding: 10px;
+                  .reset,
+                  .send {
+                    border: none;
+                    background-color: #ebe1c6;
+                    position: relative;
+                    cursor: pointer;
+                    margin-left: 20px;
+                    font: 16px/1 $Kanit;
+                    padding: 5px;
+                    &:hover {
+                      background-color: #ebdaae;
+                    }
+                  }
+                }
               }
               td {
                 display: flex;
                 flex-direction: column;
                 flex-wrap: wrap;
                 padding: 10px;
+                margin-top: 10px;
 
                 label {
                   font: 14px/1 $Kanit;
@@ -86,13 +140,26 @@
                 }
                 .errTxt {
                   margin-top: 10px;
-                  font: 14px/1 $Kanit;
+                  font: 12px/1 $Kanit;
                   color: rgb(133, 1, 1);
                 }
-                select {
-                  height: 100%;
+                #edu {
+                  height: 30px;
+                  background-color: transparent;
                 }
-                div {
+                > textarea {
+                  resize: none;
+                  padding: 10px;
+                  background-color: transparent;
+                }
+                > div {
+                  display: flex;
+                  margin-top: 10px;
+                  input {
+                    width: auto;
+                    text-align: left;
+                    margin-left: 10px;
+                  }
                 }
               }
             }

@@ -1,9 +1,10 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Layout from "../common/Layout";
 import Popup from "../common/Popup";
 
 function Gallery() {
+  const path = process.env.PUBLIC_URL;
   const key = "28e7d1179792950a30beae3c69e7d9dd";
   const method1 = "flickr.interestingness.getList";
   const searchMethod = "flickr.photos.search";
@@ -14,6 +15,8 @@ function Gallery() {
   const [Items, setItems] = useState([]);
   const [Open, setOpen] = useState(false);
   const [Index, setIndex] = useState(0);
+  const [Loading, setLoading] = useState(true);
+  const frame = useRef(null);
   useEffect(() => {
     getItem();
   }, []);
@@ -22,6 +25,11 @@ function Gallery() {
     axios.get(url).then((json) => {
       const data = json.data.photos.photo;
       setItems(data);
+
+      setTimeout(() => {
+        frame.current.classList.add("on");
+        setLoading(false);
+      }, 1000);
     });
   };
   const getFilter = (title) => {
@@ -30,21 +38,36 @@ function Gallery() {
       const regex = new RegExp(title);
       const result = data.filter((item) => regex.test(item.title));
       setItems(result);
+      setTimeout(() => {
+        frame.current.classList.add("on");
+        setLoading(false);
+      }, 1000);
     });
   };
 
   return (
     <>
       <Layout name={"Gallery"}>
+        {Loading && <img src={`${path}/img/loading.gif`} className="loading" />}
         <div className="wrapper">
           <span>{Items.length} PRODUCTS</span>
           <div className="wrap">
             <div className="filter_box">
               <h2>FILTERS</h2>
               <ul>
-                <li onClick={getItem}>FURNITURE</li>
                 <li
                   onClick={() => {
+                    setLoading(true);
+                    frame.current.classList.remove("on");
+                    getItem();
+                  }}
+                >
+                  FURNITURE
+                </li>
+                <li
+                  onClick={() => {
+                    setLoading(true);
+                    frame.current.classList.remove("on");
                     getFilter("DECOR");
                   }}
                 >
@@ -52,6 +75,8 @@ function Gallery() {
                 </li>
                 <li
                   onClick={() => {
+                    setLoading(true);
+                    frame.current.classList.remove("on");
                     getFilter("CHAR");
                   }}
                 >
@@ -59,6 +84,8 @@ function Gallery() {
                 </li>
                 <li
                   onClick={() => {
+                    setLoading(true);
+                    frame.current.classList.remove("on");
                     getFilter("LIGHT");
                   }}
                 >
@@ -66,7 +93,7 @@ function Gallery() {
                 </li>
               </ul>
             </div>
-            <ul>
+            <ul ref={frame}>
               {Items.map((item, idx) => {
                 return (
                   <li

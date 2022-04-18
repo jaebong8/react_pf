@@ -108,6 +108,45 @@ function Join() {
 
   return (
     <Layout name={"Join"}>
+      <div className="terms">
+        <div className="inner">
+          <h2>
+            TERMS OF RELATED JOIN <br />
+            TO BEIGE
+          </h2>
+          <ul>
+            <li>
+              <span>01.</span>
+              <h2>TERMS</h2>
+              <p>
+                Specialized in adornments, it will bring charm to any
+                environment. There are thousands of high quality pieces, with
+                styles that transition from classic to contemporary.
+              </p>
+            </li>
+            <li>
+              <span>02.</span>
+              <h2>POLICY</h2>
+              <p>
+                The pieces stand out for their contemporary straight lines and
+                imposing presence. Current, following the world trend of the
+                great masters, the furniture stands out for its noble and
+                innovative materials.
+              </p>
+            </li>
+            <li>
+              <span>03.</span>
+              <h2>AGREEMENT</h2>
+              <p>
+                With a mix of possibilities and high customization, the
+                furniture meets any expectations, composing cozy and charming
+                rooms, exclusive furniture for the most intimate areas of the
+                house.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
       <div className="sign">
         {Success && <h2>회원가입을 축하합니다</h2>}
         <div className="pic">
@@ -217,27 +256,34 @@ function Join() {
                 <tr>
                   <th scope="row">INTERESTS</th>
                   <td>
-                    <label htmlFor="sports">SPORTS</label>
-                    <input
-                      type="checkbox"
-                      name="interests"
-                      id="sports"
-                      onChange={handleCheck}
-                    />
-                    <label htmlFor="game">GAME</label>
-                    <input
-                      type="checkbox"
-                      name="interests"
-                      id="game"
-                      onChange={handleCheck}
-                    />
-                    <label htmlFor="music">MUSIC</label>
-                    <input
-                      type="checkbox"
-                      name="interests"
-                      id="music"
-                      onChange={handleCheck}
-                    />
+                    <div>
+                      <label htmlFor="sports">SPORTS</label>
+                      <input
+                        type="checkbox"
+                        name="interests"
+                        id="sports"
+                        onChange={handleCheck}
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="game">GAME</label>
+                      <input
+                        type="checkbox"
+                        name="interests"
+                        id="game"
+                        onChange={handleCheck}
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="music">MUSIC</label>
+                      <input
+                        type="checkbox"
+                        name="interests"
+                        id="music"
+                        onChange={handleCheck}
+                      />
+                    </div>
+
                     <span className="errTxt">{Err.interests}</span>
                   </td>
                 </tr>
@@ -275,11 +321,17 @@ function Join() {
                 </tr>
 
                 <tr>
-                  <th colSpan="2">
-                    <input type="reset" value="CANCEL" onClick={handleReset} />
+                  <th colSpan="2" className="btnBox">
+                    <input
+                      type="reset"
+                      value="CANCEL"
+                      className="reset"
+                      onClick={handleReset}
+                    />
                     <input
                       type="submit"
                       value="SEND"
+                      className="send"
                       onClick={() => {
                         setIsSubmit(true);
                       }}

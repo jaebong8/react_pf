@@ -20,7 +20,7 @@ function Layout(props) {
           <p>Lorem, ipsum.</p>
         </div>
       </figure>
-      <section className={`content ${props.name}`} ref={frame}>
+      <section className={`content_section ${props.name}`} ref={frame}>
         {props.children}
       </section>
     </>
