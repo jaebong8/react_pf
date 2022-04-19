@@ -2,9 +2,7 @@ import "./scss/style.scss";
 import { Route, Switch } from "react-router-dom";
 import Footer from "./components/common/Footer";
 import Header from "./components/common/Header";
-import Content from "./components/main/Content";
-import Visual from "./components/main/Visual";
-import News from "./components/main/News";
+import Main from "./components/main/Main";
 import Youtube from "./components/sub/Youtube";
 import About from "./components/sub/About";
 import Community from "./components/sub/Community";
@@ -19,9 +17,7 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Header type={"main"} />
-          <Visual type={"main"} />
-          <Content />
-          <News />
+          <Main />
         </Route>
 
         <Route path="/">

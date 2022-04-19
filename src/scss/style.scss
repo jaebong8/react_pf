@@ -11,6 +11,7 @@ $NenuWorld: "NenuWorld";
 $Overpass: "Overpass", sans-serif;
 $Yeonsung: "Yeon Sung";
 $Kanit: "Kanit", sans-serif;
+$Basic: "BasicCommercial";
 $tablet: 1179px;
 $mobile: 539px;
 
@@ -18,9 +19,11 @@ $mobile: 539px;
 @import "common/header";
 @import "common/footer";
 @import "common/layout";
+@import "common/popup";
 
 @import "main/visual";
-@import "main/content";
+@import "main/section1";
+@import "main/section2";
 
 @import "sub/about";
 @import "sub/youtube";

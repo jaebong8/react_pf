@@ -9,21 +9,34 @@
     object-fit: cover;
     filter: brightness(90%);
   }
-  // img {
-  //   width: 100%;
-  //   height: 100%;
-  //   object-fit: cover;
-  // }
-  h2 {
+
+  .text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-family: "NenuWorld";
-    font-weight: 300;
-    font-size: 7vw;
-    line-height: 0.9;
-    color: #fff;
     text-align: center;
+    h2 {
+      font-family: "NenuWorld";
+      font-weight: 300;
+      font-size: 7vw;
+      line-height: 0.9;
+      color: #fff;
+      text-align: center;
+    }
+    a {
+      display: inline-block;
+      font: 16px/1 $Kanit;
+      color: #645832;
+      padding: 15px 45px;
+      background-color: #ebe6d7;
+      border-radius: 5px;
+      transition: 0.5s;
+      margin-top: 10px;
+      &:hover {
+        color: #eee;
+        background-color: #645832;
+      }
+    }
   }
 }

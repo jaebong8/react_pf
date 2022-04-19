@@ -32,3 +32,9 @@ a {
 
   src: url("../../font/PPNeueWorld-SuperCondensedLight.ttf") format("truetype");
 }
+@font-face {
+  font-family: "BasicCommercial";
+  src: url("../../font/BasicCommercialLT-Light.eot") format("embedded-opentype"),
+    url("../../font/BasicCommercialLT-Light.ttf") format("truetype"),
+    url("../../font/BasicCommercialLT-Light.woff") format("woff");
+}

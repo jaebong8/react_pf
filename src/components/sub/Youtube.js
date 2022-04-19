@@ -93,7 +93,7 @@ function Youtube() {
                   style={{
                     transform: `rotate(${
                       (360 / Videos.length) * idx
-                    }deg) translateY(-180%)`,
+                    }deg) translateY(-190%)`,
                   }}
                   className={idx === 0 ? "on" : null}
                 >

@@ -1,0 +1,123 @@
+.section2 {
+  border-top: 1px solid #d1c7a3;
+
+  margin-top: 100px;
+  > h2 {
+    font: 3vmax/1 $NenuWorld;
+    text-align: center;
+    padding: 40px 0;
+  }
+
+  > .inner {
+    width: 100%;
+    border-top: 1px solid #d1c7a3;
+    border-bottom: 1px solid #d1c7a3;
+    text-align: center;
+    ul {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #d1c7a3;
+      li {
+        display: block;
+        width: 25%;
+        border-right: 1px solid #d1c7a3;
+        padding: 20px;
+
+        &:last-child {
+          border-right: none;
+        }
+        img {
+          width: 100%;
+          height: 90%;
+          object-fit: cover;
+          transition: 0.5s;
+        }
+        > .con {
+          display: flex;
+          justify-content: space-between;
+          p {
+            font: 300 20px/1 $Kanit;
+            margin-top: 10px;
+          }
+          span {
+            font: 400 20px/1 $Kanit;
+            margin-top: 10px;
+            color: #524c39;
+          }
+        }
+      }
+    }
+    a {
+      display: inline-block;
+
+      padding: 25px;
+
+      font: 300 20px/1 $Kanit;
+      color: #222;
+      transition: 0.5s;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .inner2 {
+    border-top: 1px solid #d1c7a3;
+    width: 100%;
+    height: 100vh;
+    margin-top: 50px;
+    display: flex;
+    .con {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #645832;
+      .wrap {
+        width: 55%;
+        h2 {
+          font: 3vmax/1 $NenuWorld;
+          color: #eee;
+        }
+        p {
+          font: 18px/1.6 $Basic;
+          margin-top: 50px;
+          color: #ccc6b2;
+        }
+        a {
+          display: inline-block;
+          font: 16px/1 $Kanit;
+          color: #eee;
+          margin-top: 20px;
+          position: relative;
+
+          &:hover {
+            &::after {
+              width: 100%;
+              left: 0;
+            }
+          }
+          &::after {
+            content: "";
+            display: block;
+            width: 0%;
+            height: 1px;
+            background-color: #d1c7a3;
+            position: absolute;
+            bottom: -5px;
+            right: 0;
+            transition: 0.5s;
+          }
+        }
+      }
+    }
+    .pic {
+      width: 50%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

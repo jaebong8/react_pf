@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
+import { motion, AnimatePresence } from "framer-motion";
 const Pop = styled.aside`
   width: 100%;
   height: 100vh;
@@ -37,16 +38,23 @@ const Pop = styled.aside`
 `;
 function Popup(props) {
   return (
-    <Pop className="popup">
-      <span
-        onClick={() => {
-          props.setOpen(!props.Open);
-        }}
+    <AnimatePresence>
+      <motion.div
+        className="popup"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, transition: { duration: 1 } }}
+        exit={{ opacity: 0, transition: { duration: 1 } }}
       >
-        close
-      </span>
-      <div className="con">{props.children}</div>
-    </Pop>
+        <span
+          onClick={() => {
+            props.setOpen(!props.Open);
+          }}
+        >
+          close
+        </span>
+        <div className="con">{props.children}</div>
+      </motion.div>
+    </AnimatePresence>
   );
 }
 

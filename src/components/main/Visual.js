@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Visual(props) {
   const path = process.env.PUBLIC_URL;
@@ -10,10 +11,12 @@ function Visual(props) {
         autoPlay={true}
         muted
       ></video>
-      {/* <img src={`${path}/img/bg1.jpg`} /> */}
-      <h2>
-        SEAMLESS FURNITURE <br /> WITH NATURAL FABRICS
-      </h2>
+      <div className="text">
+        <h2>
+          SEAMLESS FURNITURE <br /> WITH NATURAL FABRICS
+        </h2>
+        <Link to="/gallery">SHOP ALL</Link>
+      </div>
     </figure>
   );
 }
