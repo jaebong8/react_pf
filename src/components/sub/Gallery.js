@@ -16,7 +16,9 @@ function Gallery() {
   const [Open, setOpen] = useState(false);
   const [Index, setIndex] = useState(0);
   const [Loading, setLoading] = useState(true);
+  const [PopLoading, setPopLoading] = useState(false);
   const frame = useRef(null);
+  const pop = useRef(null);
   useEffect(() => {
     getItem();
   }, []);
@@ -25,7 +27,7 @@ function Gallery() {
     axios.get(url).then((json) => {
       const data = json.data.photos.photo;
       setItems(data);
-
+      setPopLoading(true);
       setTimeout(() => {
         frame.current.classList.add("on");
         setLoading(false);
@@ -99,7 +101,7 @@ function Gallery() {
                   <li
                     key={idx}
                     onClick={() => {
-                      setOpen(!Open);
+                      pop.current.open();
                       setIndex(idx);
                     }}
                   >
@@ -121,14 +123,22 @@ function Gallery() {
           </div>
         </div>
       </Layout>
-      {Open && (
-        <Popup Open={Open} setOpen={setOpen}>
+
+      <Popup ref={pop}>
+        {PopLoading && (
           <img
             src={`https://live.staticflickr.com/${Items[Index].server}/${Items[Index].id}_${Items[Index].secret}_b.jpg`}
             alt=""
           />
-        </Popup>
-      )}
+        )}
+        <span
+          onClick={() => {
+            pop.current.close();
+          }}
+        >
+          CLOSE
+        </span>
+      </Popup>
     </>
   );
 }

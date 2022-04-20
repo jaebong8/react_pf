@@ -1,14 +1,14 @@
 $borderColor: rgb(216, 178, 163);
 
 .Youtube_sub {
-  background-color: #edd2bf;
+  background-color: #ebd9cc;
 }
 
 .Youtube {
   width: 100%;
   height: auto;
   position: relative;
-  background-color: #edd2bf;
+  background-color: #ebd9cc;
 
   .blog {
     width: 100%;
@@ -22,7 +22,7 @@ $borderColor: rgb(216, 178, 163);
       position: absolute;
       top: 0;
       left: 0;
-      background-color: #edd2bf;
+      background-color: #ebd9cc;
       transform: rotate(-90deg) translateX(-100%);
       transform-origin: top left;
       border: 1px solid $borderColor;
@@ -45,7 +45,7 @@ $borderColor: rgb(216, 178, 163);
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: #edd2bf;
+        background-color: #ebd9cc;
         border-bottom: 1px solid $borderColor;
 
         li {
@@ -73,7 +73,7 @@ $borderColor: rgb(216, 178, 163);
         article {
           width: 50%;
           height: 100%;
-          background-color: #edd2bf;
+          background-color: #ebd9cc;
           padding: 20px 40px;
           padding-right: 80px;
           border-right: 1px solid $borderColor;
@@ -128,14 +128,13 @@ $borderColor: rgb(216, 178, 163);
   }
   .rotateBox {
     width: 100%;
-    height: 170vh;
+    height: 120vh;
     overflow: hidden;
     position: relative;
     background-color: #edd2bf;
     > .pic {
       width: 100%;
       height: 100%;
-      background-position: 0 0;
     }
     .wrap {
       background-color: transparent;
@@ -143,7 +142,7 @@ $borderColor: rgb(216, 178, 163);
       width: 400px;
       height: 500px;
       left: 50%;
-      top: 80%;
+      top: 100%;
       margin-left: -200px;
       margin-top: -250px;
       transition: 1s;
@@ -209,7 +208,7 @@ $borderColor: rgb(216, 178, 163);
       height: 50px;
 
       position: absolute;
-      top: 45%;
+      top: 55%;
       left: 60%;
       cursor: pointer;
       &:hover {
@@ -268,7 +267,7 @@ $borderColor: rgb(216, 178, 163);
       width: 50px;
       height: 50px;
       position: absolute;
-      top: 45%;
+      top: 55%;
       right: 60%;
       cursor: pointer;
 

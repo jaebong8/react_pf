@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Section1() {
   const path = process.env.PUBLIC_URL;
   return (
-    <div className="section1">
+    <section className="section1">
       <div className="text">
         <h2>CREATING PERFECT LINES AND IMPOSING PRESENCE</h2>
         <p>
@@ -34,7 +34,7 @@ function Section1() {
       <div className="pic6">
         <img src={`${path}/img/DECOR_H_700x.jpg`} />
       </div>
-    </div>
+    </section>
   );
 }
 

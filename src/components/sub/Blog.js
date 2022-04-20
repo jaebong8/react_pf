@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar } from "@fortawesome/free-regular-svg-icons";
 import { faComment } from "@fortawesome/free-regular-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import Popup from "../common/Popup";
 
 function Blog() {
   const path = process.env.PUBLIC_URL;
@@ -15,6 +16,9 @@ function Blog() {
   const [enableClick, setEnableClick] = useState(true);
   const frame = useRef(null);
   const input = useRef(null);
+  const pop = useRef(null);
+  const [PopLoading, setPopLoading] = useState(false);
+  const [popIndex, setpopIndex] = useState(0);
 
   const getFlickr = async (opt) => {
     const key = "28e7d1179792950a30beae3c69e7d9dd";
@@ -35,6 +39,7 @@ function Blog() {
         return;
       }
       setItems(json.data.photos.photo);
+      setPopLoading(true);
       console.log(json.data.photos.photo);
     });
 
@@ -81,98 +86,120 @@ function Blog() {
   }, []);
 
   return (
-    <Layout name={"Blog"}>
-      {loading && (
-        <img src={`${path}/img/loading.gif`} className="loading"></img>
-      )}
-      <div className="searchBox">
-        <input
-          placeholder="Search"
-          type="text"
-          ref={input}
-          onKeyUp={(e) => {
-            if (e.key === "Enter") {
+    <>
+      <Layout name={"Blog"}>
+        {loading && (
+          <img src={`${path}/img/loading.gif`} className="loading"></img>
+        )}
+        <div className="searchBox">
+          <input
+            placeholder="Search"
+            type="text"
+            ref={input}
+            onKeyUp={(e) => {
+              if (e.key === "Enter") {
+                showSearch(e);
+              }
+            }}
+          />
+          <button
+            onClick={(e) => {
               showSearch(e);
-            }
-          }}
-        />
-        <button
-          onClick={(e) => {
-            showSearch(e);
-          }}
-        >
-          <FontAwesomeIcon icon={faSearch} />
-        </button>
-        <button
-          onClick={() => {
-            if (enableClick) {
-              setEnableClick(false);
-              setloading(true);
-              frame.current.classList.remove("on");
-              getFlickr({
-                type: "interest",
-                count: 20,
-              });
-            }
-          }}
-        >
-          View Original Gallery
-        </button>
-      </div>
+            }}
+          >
+            <FontAwesomeIcon icon={faSearch} />
+          </button>
+          <button
+            onClick={() => {
+              if (enableClick) {
+                setEnableClick(false);
+                setloading(true);
+                frame.current.classList.remove("on");
+                getFlickr({
+                  type: "interest",
+                  count: 20,
+                });
+              }
+            }}
+          >
+            View Original Gallery
+          </button>
+        </div>
 
-      <div className="frame" ref={frame}>
-        <Maconry elementType={"div"} options={masonryOptions}>
-          {items.map((item, idx) => {
-            const buddySrc = `http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg`;
-            return (
-              <article key={idx}>
-                <div className="inner">
-                  <div className="pic">
-                    <img
-                      src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_b.jpg`}
-                    />
-                  </div>
-                  <div className="con">
-                    <div className="date">
-                      <span>
-                        <FontAwesomeIcon icon={faCalendar} />
-                        April 18,2022
-                      </span>
-                      <span>
-                        <FontAwesomeIcon icon={faComment} /> 0 Comments
-                      </span>
+        <div className="frame" ref={frame}>
+          <Maconry elementType={"div"} options={masonryOptions}>
+            {items.map((item, idx) => {
+              const buddySrc = `http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg`;
+              return (
+                <article key={idx}>
+                  <div className="inner">
+                    <div
+                      className="pic"
+                      onClick={() => {
+                        setpopIndex(idx);
+                        pop.current.open();
+                      }}
+                    >
+                      <img
+                        src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_b.jpg`}
+                      />
                     </div>
-                    <h2>{item.title ? item.title : "No Title"}</h2>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Cupiditate commodi laborum vero nesciunt? Voluptate
-                      expedita illum delectus, officia alias voluptatem vel
-                      dolorem optio, vero, dolores nostrum amet nobis sint.
-                      Consectetur, reiciendis modi dignissimos saepe animi
-                      molestiae asperiores eius at mollitia.
-                    </p>
-                    <div className="profile">
-                      <div className="pic">
-                        <img
-                          src={buddySrc}
-                          onError={(e) => {
-                            e.target.src = `https://www.flickr.com/images/buddyicon.gif`;
-                          }}
-                        />
+                    <div className="con">
+                      <div className="date">
+                        <span>
+                          <FontAwesomeIcon icon={faCalendar} />
+                          April 18,2022
+                        </span>
+                        <span>
+                          <FontAwesomeIcon icon={faComment} /> 0 Comments
+                        </span>
                       </div>
-                      <div className="name">
-                        <h3>{item.owner}</h3>
-                        <span>Photographer</span>
+                      <h2>{item.title ? item.title : "No Title"}</h2>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Cupiditate commodi laborum vero nesciunt? Voluptate
+                        expedita illum delectus, officia alias voluptatem vel
+                        dolorem optio, vero, dolores nostrum amet nobis sint.
+                        Consectetur, reiciendis modi dignissimos saepe animi
+                        molestiae asperiores eius at mollitia.
+                      </p>
+                      <div className="profile">
+                        <div className="pic">
+                          <img
+                            src={buddySrc}
+                            onError={(e) => {
+                              e.target.src = `https://www.flickr.com/images/buddyicon.gif`;
+                            }}
+                          />
+                        </div>
+                        <div className="name">
+                          <h3>{item.owner}</h3>
+                          <span>Photographer</span>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </article>
-            );
-          })}
-        </Maconry>
-      </div>
-    </Layout>
+                </article>
+              );
+            })}
+          </Maconry>
+        </div>
+      </Layout>
+      <Popup ref={pop}>
+        {PopLoading && (
+          <img
+            src={`https://live.staticflickr.com/${items[popIndex].server}/${items[popIndex].id}_${items[popIndex].secret}_b.jpg`}
+          />
+        )}
+        <span
+          onClick={() => {
+            pop.current.close();
+          }}
+        >
+          CLOSE
+        </span>
+      </Popup>
+    </>
   );
 }
 

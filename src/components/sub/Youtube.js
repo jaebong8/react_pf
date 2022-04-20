@@ -6,11 +6,12 @@ import axios from "axios";
 function Youtube() {
   const path = process.env.PUBLIC_URL;
   const [Videos, setVideos] = useState([]);
-  const [Open, setOpen] = useState(false);
   const [PopIdx, setPopIdx] = useState(0);
+  const [Loading, setLoading] = useState(false);
   let [Index, setIndex] = useState(0);
   let [activeIndex, setActiveIndex] = useState(0);
   const wrap = useRef();
+  const pop = useRef();
   const activation = () => {
     wrap.current.querySelectorAll("article").forEach((item) => {
       item.classList.remove("on");
@@ -31,6 +32,7 @@ function Youtube() {
     axios.get(url).then((data) => {
       console.log(data.data.items);
       setVideos(data.data.items);
+      setLoading(true);
     });
   }, []);
 
@@ -74,7 +76,7 @@ function Youtube() {
           <div
             className="pic"
             style={{
-              background: `url(${path}/img/youtube1.jpg) no-repeat bottom/contain`,
+              background: `url(${path}/img/youtube1.jpg) no-repeat top/cover`,
             }}
           ></div>
 
@@ -86,14 +88,14 @@ function Youtube() {
               return (
                 <article
                   onClick={() => {
-                    setOpen(!Open);
+                    pop.current.open();
                     setPopIdx(idx);
                   }}
                   key={idx}
                   style={{
                     transform: `rotate(${
                       (360 / Videos.length) * idx
-                    }deg) translateY(-190%)`,
+                    }deg) translateY(-155%)`,
                   }}
                   className={idx === 0 ? "on" : null}
                 >
@@ -154,8 +156,8 @@ function Youtube() {
         </div>
       </Layout>
 
-      {Open && (
-        <Popup Open={Open} setOpen={setOpen}>
+      <Popup ref={pop}>
+        {Loading && (
           <iframe
             src={
               `https://www.youtube.com/embed/` +
@@ -163,8 +165,16 @@ function Youtube() {
             }
             frameBorder="0"
           ></iframe>
-        </Popup>
-      )}
+        )}
+
+        <span
+          onClick={() => {
+            pop.current.close();
+          }}
+        >
+          CLOSE
+        </span>
+      </Popup>
     </>
   );
 }

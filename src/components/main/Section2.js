@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Section2() {
   const path = process.env.PUBLIC_URL;
   return (
-    <div className="section2">
+    <section className="section2">
       <h2>ENJOY OUR FEATURED PRODUCTS</h2>
       <div className="inner">
         <ul>
@@ -60,7 +60,7 @@ function Section2() {
           <img src={`${path}/img/CHARF1.webp`} />
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
