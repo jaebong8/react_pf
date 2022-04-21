@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/react_pf/static/css/main.68140952.css",
-    "main.js": "/react_pf/static/js/main.36877956.js",
+    "main.css": "/react_pf/static/css/main.d3bfe95e.css",
+    "main.js": "/react_pf/static/js/main.8ece9804.js",
     "static/media/PPNeueWorld-SuperCondensedLight.ttf": "/react_pf/static/media/PPNeueWorld-SuperCondensedLight.fe0cb620744ea3cb628e.ttf",
     "static/media/BasicCommercialLT-Light.eot": "/react_pf/static/media/BasicCommercialLT-Light.767b9e2926b96d5691a2.eot",
     "static/media/BasicCommercialLT-Light.ttf": "/react_pf/static/media/BasicCommercialLT-Light.13da20a6c344c53b32d0.ttf",
     "static/media/BasicCommercialLT-Light.woff": "/react_pf/static/media/BasicCommercialLT-Light.03d46646c2ac193c1122.woff",
     "index.html": "/react_pf/index.html",
-    "main.68140952.css.map": "/react_pf/static/css/main.68140952.css.map",
-    "main.36877956.js.map": "/react_pf/static/js/main.36877956.js.map"
+    "main.d3bfe95e.css.map": "/react_pf/static/css/main.d3bfe95e.css.map",
+    "main.8ece9804.js.map": "/react_pf/static/js/main.8ece9804.js.map"
   },
   "entrypoints": [
-    "static/css/main.68140952.css",
-    "static/js/main.36877956.js"
+    "static/css/main.d3bfe95e.css",
+    "static/js/main.8ece9804.js"
   ]
 }
