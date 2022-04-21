@@ -1,0 +1,39 @@
+.news {
+  width: 100%;
+  border-top: 1px solid #ded6bd;
+  padding: 50px 0;
+  background-color: #625732;
+  > .inner {
+    width: 1180px;
+    margin: 0 auto;
+    h2 {
+      font: 4vmax/1 $NenuWorld;
+      color: #ebe6d7;
+    }
+
+    ul {
+      margin-top: 50px;
+
+      li {
+        border-top: 1px solid #d1c7a3;
+        display: flex;
+        padding: 20px 0;
+        span {
+          font: bold 16px/1.6 $Basic;
+          color: #b7b19f;
+        }
+        h3 {
+          width: 50%;
+          font: 3vmax/1 $NenuWorld;
+          color: #ebe6d7;
+          margin-left: 50px;
+        }
+        P {
+          width: 50%;
+          font: bold 16px/1.6 $Basic;
+          color: #b7b19f;
+        }
+      }
+    }
+  }
+}

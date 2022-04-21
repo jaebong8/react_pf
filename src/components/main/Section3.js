@@ -29,8 +29,8 @@ function Section3() {
       </div>
       <div className="con">
         <div className="text">
-          <div>ITEM</div>
-          <div>DESCRIPTION</div>
+          <div className="category">ITEM</div>
+          <div className="category">DESCRIPTION</div>
         </div>
         <div className="pic">
           <Swiper
@@ -57,15 +57,15 @@ function Section3() {
             </div>
           </Swiper>
         </div>
-        <div>
+        <div className="ex">
           <span>MATERIALS:</span>
           <span>CERAMIC, GLASS, IRON, WOOD</span>
         </div>
-        <div>
+        <div className="ex">
           <span>PRODUCED IN:</span>
           <span>CANADA, ITALY, UNITED STATES</span>
         </div>
-        <div>
+        <div className="ex">
           <span>CATEGORIES:</span>
           <span>DECORATION, LAMP, FURNITURE</span>
         </div>

@@ -6,16 +6,13 @@ import { faUpRightAndDownLeftFromCenter } from "@fortawesome/free-solid-svg-icon
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import { useSelector } from "react-redux";
 
 function About() {
   const path = process.env.PUBLIC_URL;
-  const [Members, setMembers] = useState([]);
 
-  useEffect(() => {
-    axios.get(`${path}/DB/member.json`).then((json) => {
-      setMembers(json.data.data);
-    });
-  }, []);
+  //reducer에서 데이터 받아오기
+  const Members = useSelector((state) => state.memberReducer.members);
 
   return (
     <Layout name={"About"}>

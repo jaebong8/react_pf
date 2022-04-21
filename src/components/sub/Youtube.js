@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useSelector } from "react-redux";
 import Layout from "../common/Layout";
 import Popup from "../common/Popup";
-import axios from "axios";
 
 function Youtube() {
+  const youtubeData = useSelector((state) => state.youtubeReducer.youtube);
+
   const path = process.env.PUBLIC_URL;
-  const [Videos, setVideos] = useState([]);
   const [PopIdx, setPopIdx] = useState(0);
-  const [Loading, setLoading] = useState(false);
   let [Index, setIndex] = useState(0);
   let [activeIndex, setActiveIndex] = useState(0);
   const wrap = useRef();
@@ -20,21 +20,9 @@ function Youtube() {
   };
   const rotate = (Index) => {
     wrap.current.style.transform = `rotate(${
-      (360 / Videos.length) * Index
+      (360 / youtubeData.length) * Index
     }deg)`;
   };
-
-  useEffect(() => {
-    const key = "AIzaSyCIiUbJj1mOlyiNDy8QONEEYimF4Ta1qP4";
-    const id = "PLCCz4evGBSLXFehGpZ1OxnWiMM-jrsddP";
-    const num = 6;
-    const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&maxResults=${num}&playlistId=${id}`;
-    axios.get(url).then((data) => {
-      console.log(data.data.items);
-      setVideos(data.data.items);
-      setLoading(true);
-    });
-  }, []);
 
   useEffect(() => {
     rotate(Index);
@@ -81,7 +69,7 @@ function Youtube() {
           ></div>
 
           <div className="wrap" ref={wrap}>
-            {Videos.map((video, idx) => {
+            {youtubeData.map((video, idx) => {
               const desc = video.snippet.description;
               const date = video.snippet.publishedAt;
 
@@ -94,7 +82,7 @@ function Youtube() {
                   key={idx}
                   style={{
                     transform: `rotate(${
-                      (360 / Videos.length) * idx
+                      (360 / youtubeData.length) * idx
                     }deg) translateY(-155%)`,
                   }}
                   className={idx === 0 ? "on" : null}
@@ -118,7 +106,7 @@ function Youtube() {
             className="next"
             onClick={() => {
               setIndex(--Index);
-              if (activeIndex === Videos.length - 1) {
+              if (activeIndex === youtubeData.length - 1) {
                 wrap.current.querySelectorAll("article").forEach((item) => {
                   item.classList.remove("on");
                 });
@@ -143,8 +131,8 @@ function Youtube() {
                 });
                 wrap.current
                   .querySelectorAll("article")
-                  [Videos.length - 1].classList.add("on");
-                setActiveIndex(Videos.length - 1);
+                  [youtubeData.length - 1].classList.add("on");
+                setActiveIndex(youtubeData.length - 1);
                 return;
               }
               setActiveIndex(--activeIndex);
@@ -157,11 +145,11 @@ function Youtube() {
       </Layout>
 
       <Popup ref={pop}>
-        {Loading && (
+        {youtubeData.length !== 0 && (
           <iframe
             src={
               `https://www.youtube.com/embed/` +
-              Videos[PopIdx].snippet.resourceId.videoId
+              youtubeData[PopIdx].snippet.resourceId.videoId
             }
             frameBorder="0"
           ></iframe>

@@ -54,12 +54,12 @@
       border-top: 1px solid #d1c7a3;
       border-bottom: 1px solid #d1c7a3;
 
-      > div {
+      > .category {
         width: 50%;
         font: 16px/1 $Kanit;
-        height: 40px;
-        padding: 10px 30px;
+        padding: 15px 30px;
         color: #ebe6d7;
+
         &:nth-of-type(1) {
           border-right: 1px solid #d1c7a3;
         }
@@ -156,7 +156,7 @@
         }
       }
     }
-    > div {
+    > .ex {
       padding: 15px 30px;
       border-top: 1px solid #a79f83;
       display: flex;

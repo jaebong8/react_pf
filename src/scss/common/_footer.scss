@@ -61,9 +61,27 @@ footer {
         margin-top: 5px;
       }
     }
-    p {
-      font: 14px/1 $Kanit;
-      color: #8b7f55;
+
+    .rightBox {
+      .members {
+        display: flex;
+        flex-wrap: wrap;
+        li {
+          width: 50px;
+          height: 50px;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+      p {
+        font: 14px/1 $Kanit;
+        color: #8b7f55;
+        margin-top: 10px;
+        text-align: right;
+      }
     }
   }
 }
