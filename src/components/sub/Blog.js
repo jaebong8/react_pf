@@ -10,7 +10,6 @@ import Popup from "../common/Popup";
 
 function Blog() {
   const path = process.env.PUBLIC_URL;
-
   const [items, setItems] = useState([]);
   const [loading, setloading] = useState(true);
   const [enableClick, setEnableClick] = useState(true);
@@ -19,6 +18,20 @@ function Blog() {
   const pop = useRef(null);
   const [PopLoading, setPopLoading] = useState(false);
   const [popIndex, setpopIndex] = useState(0);
+  const [Month, setMonth] = useState([
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "Octorber",
+    "November",
+    "December",
+  ]);
 
   const getFlickr = async (opt) => {
     const key = "28e7d1179792950a30beae3c69e7d9dd";
@@ -35,7 +48,7 @@ function Blog() {
 
     await axios.get(url).then((json) => {
       if (json.data.photos.photo.length === 0) {
-        alert("해당 검석어의 이미지가 없습니다.");
+        alert("해당 검색어의 이미지가 없습니다.");
         return;
       }
       setItems(json.data.photos.photo);
@@ -83,6 +96,7 @@ function Blog() {
       type: "interest",
       count: 20,
     });
+    console.log();
   }, []);
 
   return (
@@ -130,6 +144,8 @@ function Blog() {
           <Maconry elementType={"div"} options={masonryOptions}>
             {items.map((item, idx) => {
               const buddySrc = `http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg`;
+              let monthRandom = parseInt(Math.random() * 12);
+              let dayRandom = parseInt(Math.random() * 31);
               return (
                 <article key={idx}>
                   <div className="inner">
@@ -148,10 +164,11 @@ function Blog() {
                       <div className="date">
                         <span>
                           <FontAwesomeIcon icon={faCalendar} />
-                          April 18,2022
+                          {`${Month[monthRandom]} ${dayRandom + 1}, 2022`}
                         </span>
                         <span>
-                          <FontAwesomeIcon icon={faComment} /> 0 Comments
+                          <FontAwesomeIcon icon={faComment} />
+                          {`${monthRandom} Comments`}
                         </span>
                       </div>
                       <h2>{item.title ? item.title : "No Title"}</h2>

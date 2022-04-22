@@ -140,9 +140,9 @@ $borderColor: rgb(216, 178, 163);
       background-color: transparent;
       position: absolute;
       width: 400px;
-      height: 500px;
+      height: 600px;
       left: 50%;
-      top: 100%;
+      top: 110%;
       margin-left: -200px;
       margin-top: -250px;
       transition: 1s;
@@ -178,7 +178,7 @@ $borderColor: rgb(216, 178, 163);
             transform: scale(1.2);
           }
           h2 {
-            font: 500 20px/1 $Kanit;
+            font: 500 42px/1 $NenuWorld;
             margin-top: 30px;
             text-align: center;
             color: #333;
@@ -201,124 +201,136 @@ $borderColor: rgb(216, 178, 163);
         }
       }
     }
-    .next {
-      all: unset;
-      display: block;
-      width: 50px;
-      height: 50px;
-
+    .nextBox {
       position: absolute;
       top: 65%;
       left: 60%;
       cursor: pointer;
+      z-index: 2;
+
       &:hover {
+        .next {
+          &::before {
+            top: 0;
+            transform: rotate(45deg);
+            margin-top: 7px;
+          }
+          &::after {
+            bottom: 0;
+            transform: rotate(-45deg);
+            margin-bottom: 7px;
+          }
+          span {
+            left: -70%;
+          }
+        }
+      }
+      .next {
+        all: unset;
+        display: block;
+        width: 50px;
+        height: 50px;
+
         &::before {
-          top: 0;
-          transform: rotate(45deg);
-          margin-top: 7px;
+          content: "";
+          display: block;
+          width: 100%;
+          height: 2px;
+          background-color: #1f1f1f;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          margin-top: -1px;
+          transition: 0.5s;
         }
         &::after {
-          bottom: 0;
-          transform: rotate(-45deg);
-          margin-bottom: 7px;
+          content: "";
+          display: block;
+          width: 100%;
+          height: 2px;
+          background-color: #1f1f1f;
+          position: absolute;
+          bottom: 50%;
+          left: 0;
+          transition: 0.5s;
+          margin-bottom: -1px;
         }
         span {
-          left: -70%;
+          display: block;
+          font: bold 24px/1 $Raleway;
+          position: absolute;
+          top: 50%;
+          left: -130%;
+          transform: translateY(-50%);
+          transition: 0.5s;
+          color: #1f1f1f;
         }
       }
-      &::before {
-        content: "";
-        display: block;
-        width: 100%;
-        height: 2px;
-        background-color: #fff;
-        position: absolute;
-        top: 50%;
-        left: 0;
-        margin-top: -1px;
-        transition: 0.5s;
-      }
-      &::after {
-        content: "";
-        display: block;
-        width: 100%;
-        height: 2px;
-        background-color: #fff;
-        position: absolute;
-        bottom: 50%;
-        left: 0;
-        transition: 0.5s;
-        margin-bottom: -1px;
-      }
-      span {
-        display: block;
-        font: bold 24px/1 $Raleway;
-        position: absolute;
-        top: 50%;
-        left: -130%;
-        transform: translateY(-50%);
-        transition: 0.5s;
-        color: #fff;
-      }
     }
-    .prev {
-      all: unset;
-      display: block;
-      width: 50px;
-      height: 50px;
+    .prevBox {
       position: absolute;
       top: 65%;
       right: 60%;
-      cursor: pointer;
-
+      z-index: 2;
       &:hover {
+        .prev {
+          &::before {
+            top: 0;
+            transform: rotate(-45deg);
+            margin-top: 7px;
+          }
+          &::after {
+            bottom: 0;
+            transform: rotate(45deg);
+            margin-bottom: 7px;
+          }
+          span {
+            right: -70%;
+          }
+        }
+      }
+      .prev {
+        all: unset;
+        display: block;
+        width: 50px;
+        height: 50px;
+
+        cursor: pointer;
+
         &::before {
-          top: 0;
-          transform: rotate(-45deg);
-          margin-top: 7px;
+          content: "";
+          display: block;
+          width: 100%;
+          height: 2px;
+          background-color: #1f1f1f;
+          position: absolute;
+          top: 50%;
+          right: 0;
+          margin-top: -1px;
+          transition: 0.5s;
         }
         &::after {
-          bottom: 0;
-          transform: rotate(45deg);
-          margin-bottom: 7px;
+          content: "";
+          display: block;
+          width: 100%;
+          height: 2px;
+          background-color: #1f1f1f;
+          position: absolute;
+          bottom: 50%;
+          left: 0;
+          transition: 0.5s;
+          margin-bottom: -1px;
         }
         span {
-          right: -70%;
+          display: block;
+          font: bold 24px/1 $Raleway;
+          position: absolute;
+          top: 50%;
+          right: -130%;
+          transform: translateY(-50%);
+          transition: 0.5s;
+          color: #1f1f1f;
         }
-      }
-      &::before {
-        content: "";
-        display: block;
-        width: 100%;
-        height: 2px;
-        background-color: #fff;
-        position: absolute;
-        top: 50%;
-        right: 0;
-        margin-top: -1px;
-        transition: 0.5s;
-      }
-      &::after {
-        content: "";
-        display: block;
-        width: 100%;
-        height: 2px;
-        background-color: #fff;
-        position: absolute;
-        bottom: 50%;
-        left: 0;
-        transition: 0.5s;
-        margin-bottom: -1px;
-      }
-      span {
-        display: block;
-        font: bold 24px/1 $Raleway;
-        position: absolute;
-        top: 50%;
-        right: -130%;
-        transform: translateY(-50%);
-        transition: 0.5s;
-        color: #fff;
       }
     }
   }

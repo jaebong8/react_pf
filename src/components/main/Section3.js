@@ -16,7 +16,7 @@ function Section3() {
     "LIGHT_A_700x.jpg",
   ]);
   return (
-    <section className="section3">
+    <section className="section3 myScroll">
       <div className="side">LOOKBOOK</div>
       <div className="text">
         <h2>LOOKBOOK</h2>

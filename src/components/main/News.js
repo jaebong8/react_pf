@@ -35,7 +35,7 @@ function News() {
   }, []);
 
   return (
-    <section className="news">
+    <section className="news myScroll">
       <div className="inner">
         <h2>Recent News</h2>
 

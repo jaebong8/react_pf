@@ -62,10 +62,10 @@
     > button {
       all: unset;
       position: absolute;
-      top: 55px;
-      left: 55px;
+      top: 1%;
+      left: 1%;
       z-index: 2;
-      background-color: #f0e2d9;
+      background-color: #fff;
       padding: 10px 20px;
       display: flex;
       align-items: center;
@@ -75,14 +75,13 @@
       color: #222;
       cursor: pointer;
       &:hover {
-        background-color: #a78f80;
+        background-color: #3396ff;
         color: #fff;
       }
     }
     .wrapper {
       width: 50%;
       height: 100%;
-      padding: 50px;
       background-color: #c7ae9d;
       #map {
         width: 100%;
@@ -106,7 +105,7 @@
 
         justify-content: center;
         letter-spacing: 20px;
-        font: 24px/1 $Kanit;
+        font: 34px/1 $NenuWorld;
         cursor: pointer;
         padding-top: 50px;
         text-align: center;

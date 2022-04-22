@@ -13,7 +13,7 @@ function RecentYoutube() {
 
   return (
     <>
-      <section className="recentYoutube">
+      <section className="recentYoutube myScroll">
         <div className="inner">
           <h2>RECENT YOUTUBE</h2>
           <ul>

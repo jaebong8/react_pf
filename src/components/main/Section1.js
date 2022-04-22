@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Section1() {
   const path = process.env.PUBLIC_URL;
   return (
-    <section className="section1">
+    <section className="section1 myScroll">
       <div className="text">
         <h2>CREATING PERFECT LINES AND IMPOSING PRESENCE</h2>
         <p>

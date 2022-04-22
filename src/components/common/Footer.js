@@ -5,10 +5,6 @@ function Footer() {
   const path = process.env.PUBLIC_URL;
   const Members = useSelector((state) => state.memberReducer.members);
 
-  useEffect(() => {
-    console.log(Members);
-  }, [Members]);
-
   return (
     <footer>
       <h2>OUR SOCIAL</h2>

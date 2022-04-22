@@ -3,7 +3,7 @@ import React from "react";
 function Section4() {
   const path = process.env.PUBLIC_URL;
   return (
-    <section className="section4">
+    <section className="section4 myScroll">
       <div className="wrap1">
         <div className="sideTitle">DETAILS</div>
         <div className="content">

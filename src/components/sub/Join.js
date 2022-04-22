@@ -148,7 +148,6 @@ function Join() {
         </div>
       </div>
       <div className="sign">
-        {Success && <h2>회원가입을 축하합니다</h2>}
         <div className="pic">
           <img src={`${path}/img/SCENE03_1.webp`} />
           <div className="text">

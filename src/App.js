@@ -2,8 +2,8 @@ import "./scss/style.scss";
 import { useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { setMembers, setYoutube } from "./redux/actions";
-import axios from "axios";
+
+import * as types from "./redux/actionType";
 
 //components----------------------------------
 import Footer from "./components/common/Footer";
@@ -20,28 +20,10 @@ import Blog from "./components/sub/Blog";
 function App() {
   const path = process.env.PUBLIC_URL;
   const dispatch = useDispatch();
-  const fetchMembers = async () => {
-    const url = path + `/DB/member.json`;
-    axios.get(url).then((json) => {
-      dispatch(setMembers(json.data.data));
-    });
-  };
-
-  const fetchYoutube = async () => {
-    const key = "AIzaSyCIiUbJj1mOlyiNDy8QONEEYimF4Ta1qP4";
-    const id = "PLCCz4evGBSLXFehGpZ1OxnWiMM-jrsddP";
-    const num = 6;
-    const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&maxResults=${num}&playlistId=${id}`;
-    await axios.get(url).then((data) => {
-      console.log(data.data.items);
-      // setVideos(data.data.items);
-      dispatch(setYoutube(data.data.items));
-    });
-  };
 
   useEffect(() => {
-    fetchYoutube();
-    fetchMembers();
+    dispatch({ type: types.MEMBER.start });
+    dispatch({ type: types.YOUTUBE.start });
   }, []);
 
   return (

@@ -102,45 +102,51 @@ function Youtube() {
               );
             })}
           </div>
-          <button
-            className="next"
-            onClick={() => {
-              setIndex(--Index);
-              if (activeIndex === youtubeData.length - 1) {
-                wrap.current.querySelectorAll("article").forEach((item) => {
-                  item.classList.remove("on");
-                });
-                wrap.current.querySelectorAll("article")[0].classList.add("on");
-                setActiveIndex(0);
-                return;
-              }
-              setActiveIndex(++activeIndex);
-              activation();
-            }}
-          >
-            <span>NEXT</span>
-          </button>
-          <button
-            className="prev"
-            onClick={() => {
-              setIndex(++Index);
+          <div className="nextBox">
+            <button
+              className="next"
+              onClick={() => {
+                setIndex(--Index);
+                if (activeIndex === youtubeData.length - 1) {
+                  wrap.current.querySelectorAll("article").forEach((item) => {
+                    item.classList.remove("on");
+                  });
+                  wrap.current
+                    .querySelectorAll("article")[0]
+                    .classList.add("on");
+                  setActiveIndex(0);
+                  return;
+                }
+                setActiveIndex(++activeIndex);
+                activation();
+              }}
+            >
+              <span>NEXT</span>
+            </button>
+          </div>
+          <div className="prevBox">
+            <button
+              className="prev"
+              onClick={() => {
+                setIndex(++Index);
 
-              if (activeIndex === 0) {
-                wrap.current.querySelectorAll("article").forEach((item) => {
-                  item.classList.remove("on");
-                });
-                wrap.current
-                  .querySelectorAll("article")
-                  [youtubeData.length - 1].classList.add("on");
-                setActiveIndex(youtubeData.length - 1);
-                return;
-              }
-              setActiveIndex(--activeIndex);
-              activation();
-            }}
-          >
-            <span>PREV</span>
-          </button>
+                if (activeIndex === 0) {
+                  wrap.current.querySelectorAll("article").forEach((item) => {
+                    item.classList.remove("on");
+                  });
+                  wrap.current
+                    .querySelectorAll("article")
+                    [youtubeData.length - 1].classList.add("on");
+                  setActiveIndex(youtubeData.length - 1);
+                  return;
+                }
+                setActiveIndex(--activeIndex);
+                activation();
+              }}
+            >
+              <span>PREV</span>
+            </button>
+          </div>
         </div>
       </Layout>
 
