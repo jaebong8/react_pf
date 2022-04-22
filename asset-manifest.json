@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/react_pf/static/css/main.0bfa6411.css",
-    "main.js": "/react_pf/static/js/main.4d4e36a9.js",
+    "main.css": "/react_pf/static/css/main.818774e5.css",
+    "main.js": "/react_pf/static/js/main.86ed613d.js",
     "static/media/PPNeueWorld-SuperCondensedLight.ttf": "/react_pf/static/media/PPNeueWorld-SuperCondensedLight.fe0cb620744ea3cb628e.ttf",
     "static/media/BasicCommercialLT-Light.eot": "/react_pf/static/media/BasicCommercialLT-Light.767b9e2926b96d5691a2.eot",
     "static/media/BasicCommercialLT-Light.ttf": "/react_pf/static/media/BasicCommercialLT-Light.13da20a6c344c53b32d0.ttf",
     "static/media/BasicCommercialLT-Light.woff": "/react_pf/static/media/BasicCommercialLT-Light.03d46646c2ac193c1122.woff",
     "index.html": "/react_pf/index.html",
-    "main.0bfa6411.css.map": "/react_pf/static/css/main.0bfa6411.css.map",
-    "main.4d4e36a9.js.map": "/react_pf/static/js/main.4d4e36a9.js.map"
+    "main.818774e5.css.map": "/react_pf/static/css/main.818774e5.css.map",
+    "main.86ed613d.js.map": "/react_pf/static/js/main.86ed613d.js.map"
   },
   "entrypoints": [
-    "static/css/main.0bfa6411.css",
-    "static/js/main.4d4e36a9.js"
+    "static/css/main.818774e5.css",
+    "static/js/main.86ed613d.js"
   ]
 }
