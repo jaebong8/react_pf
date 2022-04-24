@@ -1,0 +1,64 @@
+.section5 {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid $BorderColor;
+  article {
+    flex: 1;
+    border-right: 1px solid $BorderColor;
+    padding: 20px;
+    &:last-child {
+      border-right: none;
+    }
+    .pic {
+      width: 100%;
+      height: 60%;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        &:hover {
+          transform: scale(1.1);
+        }
+        transition: 0.5s;
+      }
+    }
+    h2 {
+      margin-top: 20px;
+      font: 3vmax/1 $NenuWorld;
+      color: #1f1f1f;
+    }
+    p {
+      margin-top: 30px;
+      font: 18px/1.2 $Basic;
+      color: #1f1f1f;
+    }
+    a {
+      display: inline-block;
+      margin-top: 30px;
+      font: 400 16px/1 $Kanit;
+      color: #1f1f1f;
+      position: relative;
+      &:hover {
+        color: #645832;
+        &::after {
+          width: 100%;
+          left: 0;
+        }
+      }
+      &::after {
+        content: "";
+        display: block;
+        width: 0%;
+        height: 1px;
+        position: absolute;
+        right: 0;
+        bottom: -2px;
+        background-color: #1f1f1f;
+        transition: 0.5s;
+      }
+    }
+  }
+}

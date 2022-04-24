@@ -18,16 +18,39 @@
         background-color: #f9f5f2;
         border-right: 1px solid #ded6bd;
         cursor: pointer;
+        transition: 0.5s;
         &:last-child {
           border-right: none;
         }
         .pic {
           width: 100%;
           padding: 30px;
+          position: relative;
           img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+          }
+          svg {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            color: #f9f5f2;
+            font-size: 24px;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: 0.5s;
+          }
+        }
+        &:hover {
+          .pic {
+            img {
+              opacity: 0.8;
+            }
+          }
+          svg {
+            top: 50%;
+            opacity: 1;
           }
         }
       }

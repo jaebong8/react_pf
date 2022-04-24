@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import Popup from "../common/Popup";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlay } from "@fortawesome/free-solid-svg-icons";
 
 function RecentYoutube() {
   const youtubeData = useSelector((state) => state.youtubeReducer.youtube);
@@ -29,6 +31,7 @@ function RecentYoutube() {
                   >
                     <div className="pic">
                       <img src={data.snippet.thumbnails.medium.url} />
+                      <FontAwesomeIcon icon={faPlay} />
                     </div>
                   </li>
                 );

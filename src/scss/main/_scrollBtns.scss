@@ -29,13 +29,16 @@
         margin-top: -8.5px;
         margin-left: -8.5px;
         transition: 0.5s;
-        animation: scrollBtn 0.5s linear;
+        animation: scrollBtn 0.5s linear infinite;
       }
     }
   }
 }
 
 @keyframes scrollBtn {
+  0% {
+    transform: scale(0.9);
+  }
   100% {
     transform: scale(1.1);
   }

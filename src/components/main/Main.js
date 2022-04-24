@@ -4,6 +4,8 @@ import Section1 from "./Section1";
 import Section2 from "./Section2";
 import Section3 from "./Section3";
 import Section4 from "./Section4";
+import Section5 from "./Section5";
+import Visual2 from "./Visual2";
 import News from "./News";
 import RecentYoutube from "./RecentYoutube";
 import ScrollBtns from "./ScrollBtns";
@@ -55,14 +57,19 @@ function Main() {
   }, [Index]);
 
   return (
-    <main style={{ backgroundColor: "#ebe6d7" }} ref={main}>
+    <main
+      style={{ backgroundColor: "#ebe6d7", paddingBottom: "50px" }}
+      ref={main}
+    >
       <Visual type={"main"} />
       <Section1 />
       <Section2 />
       <RecentYoutube />
+      <Visual2 />
       <News />
       <Section3 />
       <Section4 />
+      <Section5 />
       <ScrollBtns Sections={Sections} setIndex={setIndex} />
     </main>
   );

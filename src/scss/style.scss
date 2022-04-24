@@ -12,6 +12,7 @@ $Overpass: "Overpass", sans-serif;
 $Yeonsung: "Yeon Sung";
 $Kanit: "Kanit", sans-serif;
 $Basic: "BasicCommercial";
+$BorderColor: #d1c7a3;
 $tablet: 1179px;
 $mobile: 539px;
 
@@ -29,6 +30,8 @@ $mobile: 539px;
 @import "main/news";
 @import "main/section4";
 @import "main/scrollBtns";
+@import "main/visual2";
+@import "main/section5";
 
 @import "sub/about";
 @import "sub/youtube";
