@@ -1,74 +1,47 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
-
-const path = process.env.PUBLIC_URL;
+import Menu from "./Menu";
 
 function Header(props) {
-  const active = { color: "#fff1b4" };
-  const [MenuActive, setMenuActive] = useState(false);
+  const menu = useRef();
   return (
-    <header className={props.type}>
-      <div className="inner">
-        <h1>
-          <NavLink to="/">Beige'</NavLink>
-        </h1>
-        <button
-          className="hamburger"
-          onClick={() => {
-            setMenuActive(true);
-          }}
-        >
-          MENU
-        </button>
-
-        <ul id="gnb" style={MenuActive ? { left: "0" } : null}>
-          <li>
-            <NavLink to="/about" activeStyle={active}>
-              ABOUT
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink to="/gallery" activeStyle={active}>
-              GALLERY
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/youtube" activeStyle={active}>
-              YOUTUBE
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/Blog" activeStyle={active}>
-              BLOG
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/community" activeStyle={active}>
-              COMMUNITY
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink to="/contact" activeStyle={active}>
-              CONTACT
-            </NavLink>
-          </li>
-          <button
-            className="closeBtn"
+    <>
+      <header className={props.type}>
+        <div className="inner">
+          <h1
             onClick={() => {
-              setMenuActive(false);
+              menu.current.close();
             }}
           >
-            CLOSE
+            <NavLink to="/">Beige'</NavLink>
+          </h1>
+          <button
+            className="hamburger"
+            onClick={() => {
+              menu.current.open();
+            }}
+          >
+            MENU
           </button>
-        </ul>
 
-        <NavLink to="/join" className="join">
-          JOIN
-        </NavLink>
-      </div>
-    </header>
+          <NavLink
+            to="/join"
+            className="join"
+            onClick={() => {
+              menu.current.close();
+            }}
+            activeStyle={{
+              color: "#fff",
+              backgroundColor: "#8d734d",
+              border: "1px solid transparent",
+            }}
+          >
+            JOIN
+          </NavLink>
+        </div>
+      </header>
+      <Menu ref={menu} />
+    </>
   );
 }
 

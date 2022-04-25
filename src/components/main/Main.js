@@ -27,7 +27,7 @@ function Main() {
     });
   };
   const activation = () => {
-    const base = 0;
+    const base = -100;
     let scroll = window.scrollY;
     setScrolled(scroll);
     const btns = main.current.querySelectorAll(".scrollBtns li");
@@ -60,6 +60,7 @@ function Main() {
     <main
       style={{ backgroundColor: "#ebe6d7", paddingBottom: "50px" }}
       ref={main}
+      onLoad={getPos}
     >
       <Visual type={"main"} />
       <Section1 />
