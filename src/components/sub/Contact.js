@@ -126,7 +126,7 @@ function Contact() {
           </div>
         </div>
       </div>
-      <div className="wrapper">
+      <div className="container">
         <button
           onClick={() => {
             setTraffic(!Traffic);

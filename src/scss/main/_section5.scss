@@ -62,3 +62,26 @@
     }
   }
 }
+
+@media screen and (max-width: $tablet) {
+  .section5 {
+    flex-direction: column;
+    height: auto;
+    article {
+      border: none;
+      border-bottom: 1px solid $BorderColor;
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
+@media screen and (max-width: $mobile) {
+  .section5 {
+    article {
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}

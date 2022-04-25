@@ -59,6 +59,9 @@
             cursor: pointer;
             font: 300 14px/1 $Kanit;
             color: #555;
+            &:hover {
+              text-decoration: underline;
+            }
           }
         }
       }
@@ -120,6 +123,84 @@
                 font: 16px/1 $Kanit;
                 color: rgb(31, 48, 0);
                 padding: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .Gallery {
+    .wrapper {
+      .wrap {
+        .filter_box {
+          h2 {
+            padding-left: 30px;
+          }
+          ul {
+            li {
+              padding: 10px;
+              padding-left: 30px;
+            }
+          }
+        }
+        > ul {
+          > li {
+            > .inner {
+              .txt {
+                h3 {
+                  font: 14px/1 $Kanit;
+                }
+                span {
+                  font: 12px/1 $Kanit;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .Gallery {
+    > .loading {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: 300px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .wrapper {
+      .wrap {
+        flex-direction: column;
+        .filter_box {
+          h2 {
+            padding-left: 30px;
+          }
+          ul {
+            li {
+              padding: 10px;
+              padding-left: 30px;
+            }
+          }
+        }
+        > ul {
+          > li {
+            width: 100%;
+            > .inner {
+              .txt {
+                h3 {
+                  font: 14px/1 $Kanit;
+                }
+                span {
+                  font: 12px/1 $Kanit;
+                }
               }
             }
           }

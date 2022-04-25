@@ -51,7 +51,6 @@
   .frame {
     transform: translateY(200px);
     opacity: 0;
-    transition: 1s;
 
     &.on {
       transform: translateY(0);
@@ -133,6 +132,38 @@
                 font: 12px/1.6 $openSans;
                 margin-top: -5px;
                 color: #555;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .Blog {
+    .frame {
+      article {
+        width: 50%;
+      }
+    }
+  }
+}
+@media screen and (max-width: $mobile) {
+  .Blog {
+    .frame {
+      article {
+        width: 100%;
+        .inner {
+          .con {
+            .date {
+              span {
+                &:nth-of-type(2) {
+                  display: block;
+                  margin-left: 0;
+                  margin-top: 10px;
+                }
               }
             }
           }

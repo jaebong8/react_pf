@@ -1,0 +1,18 @@
+.ScrollTopBtn {
+  all: unset;
+  position: fixed;
+  bottom: 5%;
+  right: 3%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #9c752d;
+  z-index: 10;
+  svg {
+    font-size: 22px;
+    color: #fff;
+  }
+}

@@ -15,13 +15,12 @@
       width: 1180px;
       margin: 0 auto;
       > h2 {
-        font: 4vw/1 $NenuWorld;
+        font: 4vmax/1 $NenuWorld;
       }
       ul {
         margin-top: 100px;
         li {
           display: flex;
-
           border-top: 1px solid #d1c7a3;
           padding-top: 20px;
           padding-bottom: 30px;
@@ -31,7 +30,7 @@
           }
           h2 {
             width: 50%;
-            font: 4vw/1 $NenuWorld;
+            font: 4vmax/1 $NenuWorld;
             margin-left: 70px;
           }
           p {
@@ -159,6 +158,125 @@
                     width: auto;
                     text-align: left;
                     margin-left: 10px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .Join {
+    .terms {
+      .inner {
+        width: 100%;
+        padding: 0 30px;
+
+        ul {
+          margin-top: 50px;
+        }
+      }
+    }
+    .sign {
+      margin-top: 50px;
+      flex-direction: column;
+
+      > form {
+        fieldset {
+          table {
+            width: 100%;
+            height: 100%;
+            border-collapse: collapse;
+            tbody {
+              tr {
+                td {
+                  input {
+                    width: 100%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .Join {
+    .terms {
+      .inner {
+        width: 100%;
+        padding: 0 30px;
+
+        ul {
+          margin-top: 50px;
+          li {
+            flex-wrap: wrap;
+            h2 {
+              margin-left: 20px;
+            }
+            p {
+              margin-top: 10px;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+    .sign {
+      margin-top: 50px;
+      flex-direction: column;
+      .pic {
+        width: 100%;
+        min-height: 250px;
+        img {
+          min-height: 250px;
+        }
+        .text {
+          width: 100%;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+
+          h2 {
+            font-size: 32px;
+          }
+          > button {
+            width: 80%;
+            text-align: left;
+          }
+        }
+      }
+
+      > form {
+        width: 100%;
+        fieldset {
+          table {
+            tbody {
+              width: 100%;
+              tr {
+                display: flex;
+                flex-direction: column;
+
+                th {
+                  width: 100%;
+                  text-align: left;
+                  &.btnBox {
+                    text-align: center;
+                  }
+                }
+
+                td {
+                  padding: 0;
+                  input {
+                    width: 100%;
                   }
                 }
               }

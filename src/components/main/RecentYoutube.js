@@ -9,10 +9,6 @@ function RecentYoutube() {
   const [PopIdx, setPopIdx] = useState(0);
   const pop = useRef(null);
 
-  useEffect(() => {
-    console.log(youtubeData);
-  }, [youtubeData]);
-
   return (
     <>
       <section className="recentYoutube myScroll">

@@ -10,14 +10,13 @@ function Visual2() {
           background: `url(${path}/img/visual2.webp) no-repeat center/cover`,
           backgroundAttachment: "fixed",
         }}
-      >
-        <video
-          src="https://cdn.shopify.com/s/files/1/0605/2062/8438/files/SCENE03_v.mp4?v=1634144804"
-          loop
-          muted
-          autoPlay
-        ></video>
-      </div>
+      ></div>
+      <video
+        src="https://cdn.shopify.com/s/files/1/0605/2062/8438/files/SCENE03_v.mp4?v=1634144804"
+        loop
+        muted
+        autoPlay
+      ></video>
     </figure>
   );
 }

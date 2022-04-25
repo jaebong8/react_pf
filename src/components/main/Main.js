@@ -8,6 +8,7 @@ import Section5 from "./Section5";
 import Visual2 from "./Visual2";
 import News from "./News";
 import RecentYoutube from "./RecentYoutube";
+import ScrollTopBtn from "./ScrollTopBtn";
 import ScrollBtns from "./ScrollBtns";
 import Anime from "../../class/anim";
 
@@ -72,6 +73,7 @@ function Main() {
       <Section4 />
       <Section5 />
       <ScrollBtns Sections={Sections} setIndex={setIndex} />
+      <ScrollTopBtn />
     </main>
   );
 }

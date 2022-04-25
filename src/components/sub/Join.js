@@ -91,9 +91,7 @@ function Join() {
     setVal({ ...Val, [name]: isSelected });
   };
   useEffect(() => {
-    console.log(Err);
     const len = Object.keys(Err).length;
-    console.log(len);
 
     if (len === 0 && IsSubmit) {
       setSuccess(true);

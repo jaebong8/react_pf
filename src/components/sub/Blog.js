@@ -53,7 +53,6 @@ function Blog() {
       }
       setItems(json.data.photos.photo);
       setPopLoading(true);
-      console.log(json.data.photos.photo);
     });
 
     setTimeout(() => {

@@ -35,7 +35,7 @@
       }
       p {
         color: #333;
-        font: bold 2vmax/1 $logo;
+        font: bold 2vmax/1 $Raleway;
         text-align: center;
       }
     }
@@ -44,7 +44,7 @@
       bottom: 10px;
       right: 10%;
       color: #333;
-      font: bold 20px/1 $logo;
+      font: bold 20px/1 $Raleway;
       text-align: center;
     }
   }
@@ -71,5 +71,22 @@
 @keyframes move2 {
   100% {
     left: 10%;
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .sub_visual {
+    height: 300px;
+
+    .wrap {
+      span {
+        font: bold 200px/1 $logo;
+      }
+      .txt {
+      }
+      > p {
+        display: none;
+      }
+    }
   }
 }

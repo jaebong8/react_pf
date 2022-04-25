@@ -184,3 +184,96 @@
     }
   }
 }
+
+@media screen and (max-width: $tablet) {
+  .Community {
+    .inner {
+      .inputBox {
+        padding: 10px;
+        width: 70%;
+
+        > input {
+          width: 50%;
+          margin: 0 auto;
+        }
+        > textarea {
+          width: 50%;
+          margin: 0 auto;
+        }
+
+        > .btns {
+          width: 50%;
+          margin: 0 auto;
+          margin-top: 20px;
+        }
+      }
+      .showBox {
+        width: 80%;
+
+        margin: 0;
+        margin-left: 100px;
+        margin-top: -50px;
+      }
+
+      .pic1 {
+        top: -100px;
+        right: 5px;
+        z-index: -10;
+      }
+      .pic2 {
+        bottom: -100px;
+        left: 10px;
+        z-index: -10;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .Community {
+    .inner {
+      .inputBox {
+        padding: 10px;
+        width: 90%;
+        margin: 0 auto;
+
+        > input {
+          width: 100%;
+          min-width: 0px;
+          margin: 0 auto;
+        }
+        > textarea {
+          width: 100%;
+          margin: 0 auto;
+          min-width: 0px;
+        }
+
+        > .btns {
+          width: 100%;
+          margin: 0 auto;
+          margin-top: 20px;
+        }
+      }
+      .showBox {
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+        article {
+          margin-top: 30px;
+          padding: 10px;
+        }
+      }
+
+      .pic1 {
+        top: -100px;
+        right: 5px;
+        z-index: -10;
+      }
+      .pic2 {
+        bottom: -100px;
+        left: 10px;
+        z-index: -10;
+      }
+    }
+  }
+}

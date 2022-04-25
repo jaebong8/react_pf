@@ -3,7 +3,7 @@ footer {
   background-color: #645832;
   padding: 50px 40px;
   h2 {
-    font: 2vw/1 $Kanit;
+    font: 32px/1 $Kanit;
     color: #ebe6d7;
   }
   .wrap {
@@ -73,6 +73,10 @@ footer {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            filter: grayscale(100%) sepia(100%);
+            &:hover {
+              filter: grayscale(0) sepia(0);
+            }
           }
         }
       }
@@ -81,6 +85,54 @@ footer {
         color: #8b7f55;
         margin-top: 10px;
         text-align: right;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  footer {
+    h2 {
+      font: 32px/1 $Kanit;
+    }
+    .wrap {
+      flex-wrap: wrap;
+      > ul {
+        display: flex;
+        flex-wrap: wrap;
+        > li {
+        }
+      }
+      .left {
+        li {
+          margin-right: 60px;
+          margin-top: 20px;
+        }
+      }
+      .right {
+        li {
+          margin-left: 0;
+          margin-right: 60px;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  footer {
+    .wrap2 {
+      margin-top: 50px;
+      flex-direction: column;
+      align-items: flex-start;
+      ul {
+        > li {
+          font-size: 16px;
+        }
+      }
+      .rightBox {
+        margin-top: 20px;
       }
     }
   }

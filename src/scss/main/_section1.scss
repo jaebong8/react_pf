@@ -13,7 +13,7 @@
     position: relative;
     z-index: 2;
     h2 {
-      font: 6vw/1 $NenuWorld;
+      font: 6vmax/1 $NenuWorld;
       text-align: center;
       color: #1f1f1f;
     }
@@ -82,6 +82,120 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .section1 {
+    height: 100vh;
+
+    > .text {
+      width: 50%;
+    }
+
+    > div {
+      &.pic1 {
+        width: 25vmax;
+        height: 20vmax;
+        top: 2%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      &.pic2 {
+        width: 20vmax;
+        height: 20vmax;
+        top: 20%;
+        left: 5%;
+      }
+      &.pic3 {
+        width: 15vmax;
+        height: 25vh;
+        top: 25%;
+        right: 10%;
+      }
+      &.pic4 {
+        width: 30vmax;
+        height: 25vmax;
+        bottom: 15%;
+        left: 1%;
+      }
+      &.pic5 {
+        width: 15vmax;
+        height: 20vmax;
+        bottom: 30%;
+        right: 0%;
+      }
+      &.pic6 {
+        width: 20vmax;
+        height: 20vmax;
+        bottom: 0%;
+        right: 20%;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .section1 {
+    height: 100vh;
+
+    > .text {
+      width: 70%;
+      p {
+        color: #333;
+      }
+    }
+
+    > div {
+      &.pic1 {
+        width: 25vmax;
+        height: 20vmax;
+        top: 2%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      &.pic2 {
+        width: 20vmax;
+        height: 20vmax;
+        top: 30%;
+        left: 5%;
+      }
+      &.pic3 {
+        width: 15vmax;
+        height: 25vh;
+        top: 20%;
+        right: 1%;
+      }
+      &.pic4 {
+        width: 30vmax;
+        height: 25vmax;
+        bottom: 10%;
+        left: 1%;
+      }
+      &.pic5 {
+        width: 15vmax;
+        height: 20vmax;
+        bottom: 25%;
+        right: 0%;
+      }
+      &.pic6 {
+        width: 20vmax;
+        height: 20vmax;
+        bottom: 0%;
+        right: 1%;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.5;
+      }
     }
   }
 }

@@ -36,3 +36,31 @@
     }
   }
 }
+
+@media screen and (max-width: $tablet) {
+  .news {
+    padding: 50px 20px;
+    > .inner {
+      width: 100%;
+    }
+  }
+}
+@media screen and (max-width: $mobile) {
+  .news {
+    > .inner {
+      ul {
+        li {
+          flex-wrap: wrap;
+
+          h3 {
+            margin-left: 20px;
+          }
+          P {
+            width: 100%;
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -120,3 +120,78 @@
     }
   }
 }
+
+@media screen and (max-width: $tablet) {
+  .section2 {
+    > .inner {
+      ul {
+        li {
+          width: 50%;
+          .con {
+            span {
+              font-size: 14px;
+            }
+            p {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+    .inner2 {
+      height: auto;
+
+      .con {
+        width: 50%;
+        padding: 20px;
+
+        .wrap {
+          width: 100%;
+
+          p {
+            font: 14px/1.6 $Basic;
+            margin-top: 20px;
+          }
+          a {
+            font: 12px/1 $Kanit;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .section2 {
+    > .inner {
+      ul {
+        li {
+          width: 100%;
+        }
+      }
+    }
+    .inner2 {
+      height: auto;
+      flex-direction: column;
+      .con {
+        width: 100%;
+        padding: 20px;
+
+        .wrap {
+          width: 100%;
+
+          p {
+            font: 14px/1.6 $Basic;
+            margin-top: 20px;
+          }
+          a {
+            font: 12px/1 $Kanit;
+          }
+        }
+      }
+      .pic {
+        width: 100%;
+      }
+    }
+  }
+}
