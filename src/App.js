@@ -24,6 +24,8 @@ function App() {
   useEffect(() => {
     dispatch({ type: types.MEMBER.start });
     dispatch({ type: types.YOUTUBE.start });
+    dispatch({ type: types.FLICKR.start, opt: { type: "interest" } });
+    dispatch({ type: types.GALLERY.start });
   }, []);
 
   return (

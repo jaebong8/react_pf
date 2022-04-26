@@ -32,11 +32,29 @@
         color: #222;
         font: bold 5vmax/1 $logo;
         text-align: center;
+        &:hover ~ .cursor {
+          transform: scale(8);
+        }
       }
       p {
         color: #333;
         font: bold 2vmax/1 $Raleway;
         text-align: center;
+        &:hover ~ .cursor {
+          transform: scale(8);
+        }
+      }
+      .cursor {
+        width: 20px;
+        height: 20px;
+        background: #fff;
+        position: fixed;
+        border-radius: 50px;
+        z-index: 4;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        mix-blend-mode: difference;
+        transition: transform 0.3s;
       }
     }
     > p {

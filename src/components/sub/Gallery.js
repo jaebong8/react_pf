@@ -6,14 +6,11 @@ import Popup from "../common/Popup";
 function Gallery() {
   const path = process.env.PUBLIC_URL;
   const key = "28e7d1179792950a30beae3c69e7d9dd";
-  const method1 = "flickr.interestingness.getList";
-  const searchMethod = "flickr.photos.search";
   const method2 = "flickr.people.getPhotos";
   const id = "195088691@N07";
   const num = 20;
   const url = `https://www.flickr.com/services/rest/?method=${method2}&api_key=${key}&per_page=${num}&format=json&nojsoncallback=1&user_id=${id}`;
   const [Items, setItems] = useState([]);
-  const [Open, setOpen] = useState(false);
   const [Index, setIndex] = useState(0);
   const [Loading, setLoading] = useState(true);
   const [PopLoading, setPopLoading] = useState(false);

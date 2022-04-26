@@ -7,16 +7,18 @@ import { faCalendar } from "@fortawesome/free-regular-svg-icons";
 import { faComment } from "@fortawesome/free-regular-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import Popup from "../common/Popup";
+import { useDispatch, useSelector } from "react-redux";
 
 function Blog() {
+  const { flickr } = useSelector((state) => state.flickrReducer);
+  const dispatch = useDispatch();
+  const [opt, setOpt] = useState({ type: "interest" });
   const path = process.env.PUBLIC_URL;
-  const [items, setItems] = useState([]);
   const [loading, setloading] = useState(true);
   const [enableClick, setEnableClick] = useState(true);
   const frame = useRef(null);
   const input = useRef(null);
   const pop = useRef(null);
-  const [PopLoading, setPopLoading] = useState(false);
   const [popIndex, setpopIndex] = useState(0);
   const [Month, setMonth] = useState([
     "January",
@@ -32,38 +34,25 @@ function Blog() {
     "November",
     "December",
   ]);
+  const masonryOptions = {
+    transitionDuration: "0.5s",
+  };
 
-  const getFlickr = async (opt) => {
-    const key = "28e7d1179792950a30beae3c69e7d9dd";
-    const method1 = "flickr.interestingness.getList";
-    const method2 = "flickr.photos.search";
-    const num = opt.count;
-    let url = "";
-    if (opt.type === "interest") {
-      url = `https://www.flickr.com/services/rest/?method=${method1}&per_page=${num}&api_key=${key}&format=json&nojsoncallback=1`;
-    }
-    if (opt.type === "search") {
-      url = `https://www.flickr.com/services/rest/?method=${method2}&per_page=${num}&api_key=${key}&format=json&nojsoncallback=1&tags=${opt.tags}`;
-    }
-
-    await axios.get(url).then((json) => {
-      if (json.data.photos.photo.length === 0) {
-        alert("해당 검색어의 이미지가 없습니다.");
-        return;
-      }
-      setItems(json.data.photos.photo);
-      setPopLoading(true);
-    });
-
+  const endLoading = () => {
     setTimeout(() => {
       frame.current.classList.add("on");
       setloading(false);
-      setTimeout(() => {
-        setEnableClick(true);
-      }, 1000);
+      setTimeout(() => setEnableClick(true), 1000);
     }, 1000);
   };
 
+  const initGallery = () => {
+    setEnableClick(false);
+    setloading(true);
+    frame.current.classList.remove("on");
+    setOpt({ type: "interest" });
+    endLoading();
+  };
   const showSearch = (e) => {
     const result = input.current.value.trim();
 
@@ -73,30 +62,19 @@ function Blog() {
       return;
     }
 
-    if (enableClick) {
-      setEnableClick(false);
-      setloading(true);
-      frame.current.classList.remove("on");
+    setEnableClick(false);
+    setloading(true);
+    frame.current.classList.remove("on");
 
-      getFlickr({
-        type: "search",
-        count: 20,
-        tags: result,
-      });
-    }
-  };
-
-  const masonryOptions = {
-    transitionDuration: "0.5s",
+    setOpt({ type: "search", tags: result });
+    input.current.value = "";
+    endLoading();
   };
 
   useEffect(() => {
-    getFlickr({
-      type: "interest",
-      count: 20,
-    });
-    console.log();
-  }, []);
+    dispatch({ type: "FLICKR_START", opt });
+    endLoading();
+  }, [opt]);
 
   return (
     <>
@@ -111,13 +89,13 @@ function Blog() {
             ref={input}
             onKeyUp={(e) => {
               if (e.key === "Enter") {
-                showSearch(e);
+                if (enableClick) showSearch();
               }
             }}
           />
           <button
             onClick={(e) => {
-              showSearch(e);
+              if (enableClick) showSearch();
             }}
           >
             <FontAwesomeIcon icon={faSearch} />
@@ -125,13 +103,7 @@ function Blog() {
           <button
             onClick={() => {
               if (enableClick) {
-                setEnableClick(false);
-                setloading(true);
-                frame.current.classList.remove("on");
-                getFlickr({
-                  type: "interest",
-                  count: 20,
-                });
+                initGallery();
               }
             }}
           >
@@ -141,7 +113,7 @@ function Blog() {
 
         <div className="frame" ref={frame}>
           <Maconry elementType={"div"} options={masonryOptions}>
-            {items.map((item, idx) => {
+            {flickr.map((item, idx) => {
               const buddySrc = `http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg`;
               let monthRandom = parseInt(Math.random() * 12);
               let dayRandom = parseInt(Math.random() * 31);
@@ -202,9 +174,9 @@ function Blog() {
         </div>
       </Layout>
       <Popup ref={pop}>
-        {PopLoading && (
+        {flickr.length !== 0 && (
           <img
-            src={`https://live.staticflickr.com/${items[popIndex].server}/${items[popIndex].id}_${items[popIndex].secret}_b.jpg`}
+            src={`https://live.staticflickr.com/${flickr[popIndex].server}/${flickr[popIndex].id}_${flickr[popIndex].secret}_b.jpg`}
           />
         )}
         <span

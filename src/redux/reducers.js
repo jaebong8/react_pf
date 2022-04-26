@@ -25,9 +25,37 @@ const youtubeReducer = (state = { youtube: [] }, action) => {
       return state;
   }
 };
+
+const flickrReducer = (state = { flickr: [] }, action) => {
+  switch (action.type) {
+    case types.FLICKR.start:
+      return { ...state };
+    case types.FLICKR.success:
+      return { ...state, flickr: action.payload };
+    case types.FLICKR.error:
+      return { ...state, flickr: action.payload };
+    default:
+      return state;
+  }
+};
+const galleryReducer = (state = { gallery: [] }, action) => {
+  switch (action.type) {
+    case types.GALLERY.start:
+      return { ...state };
+    case types.GALLERY.success:
+      return { ...state, gallery: action.payload };
+    case types.GALLERY.error:
+      return { ...state, gallery: action.payload };
+    default:
+      return state;
+  }
+};
+
 const reducers = combineReducers({
   memberReducer,
   youtubeReducer,
+  flickrReducer,
+  galleryReducer,
 });
 
 export default reducers;
