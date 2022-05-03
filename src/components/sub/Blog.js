@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import Layout from "../common/Layout";
-import Maconry from "react-masonry-component";
+import Masonry from "react-masonry-component";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar } from "@fortawesome/free-regular-svg-icons";
 import { faComment } from "@fortawesome/free-regular-svg-icons";
@@ -112,7 +112,7 @@ function Blog() {
         </div>
 
         <div className="frame" ref={frame}>
-          <Maconry elementType={"div"} options={masonryOptions}>
+          <Masonry elementType={"div"} options={masonryOptions}>
             {flickr.map((item, idx) => {
               const buddySrc = `http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg`;
               let monthRandom = parseInt(Math.random() * 12);
@@ -170,7 +170,7 @@ function Blog() {
                 </article>
               );
             })}
-          </Maconry>
+          </Masonry>
         </div>
       </Layout>
       <Popup ref={pop}>

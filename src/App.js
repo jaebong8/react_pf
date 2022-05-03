@@ -18,7 +18,6 @@ import Join from "./components/sub/Join";
 import Blog from "./components/sub/Blog";
 
 function App() {
-  const path = process.env.PUBLIC_URL;
   const dispatch = useDispatch();
 
   useEffect(() => {
